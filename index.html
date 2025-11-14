@@ -26,7 +26,7 @@
 
         /* شريط التنقل (Navbar) - مع ثبات */
         .navbar {
-            background-color: rgb(83, 16, 16); 
+            background-color: rgb(83, 16, 16);
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -90,6 +90,134 @@
              grid-template-columns: repeat(5, 1fr); /* 5 أعمدة لمعرض الصور */
         }
 
+        /* **الأنماط الجديدة للواجهات الفرعية ومعرض الهيئة التدريسية** */
+        .tertiary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 أعمدة للواجهة الثالثة */
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        /* تصميم زر الروابط الفرعية (ملخصات/متطلبات) - التصميم الجديد الفخم */
+        .sub-link-button {
+            /* الألوان الأساسية */
+            background: linear-gradient(145deg, #4d0000, #330000); /* تدرج لوني عميق */
+            color: #f0f0f0;
+            
+            /* 1. الحافة الخمرية (النمط العام، يتم تخصيصه بالفئات الفرعية) */
+            border: 2px solid #8b0000; 
+            
+            /* الحجم والشكل */
+            padding: 18px 15px; 
+            border-radius: 12px; 
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold; 
+            width: 100%;
+            text-align: center;
+            text-decoration: none; 
+            display: block; 
+            
+            /* الظل الفخم */
+            box-shadow: 
+                0 8px 15px rgba(0, 0, 0, 0.3), 
+                inset 0 0 10px rgba(255, 255, 255, 0.1); 
+
+            /* الحركة والانتقال */
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden; 
+        }
+
+        /* تأثير التحويم (Hover Effect) */
+        .sub-link-button:hover {
+            background: linear-gradient(145deg, #6e0000, #4d0000); 
+            transform: translateY(-4px) scale(1.02); 
+            box-shadow: 
+                0 12px 20px rgba(0, 0, 0, 0.4), 
+                inset 0 0 15px rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        /* تم تعديل النمط العام لـ sub-link-button:active لإزالة التوهج العام (سيعوّضه التوهج الخاص بالفئات) */
+        .sub-link-button:active {
+            transform: translateY(1px); /* ينزل قليلاً ليحاكي الضغط */
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+        }
+
+        /* ================================================= */
+        /* تخصيص ألوان الأزرار الـ 7 في الواجهة الثالثة (التوهج والحافة) */
+        /* ================================================= */
+
+        /* 1. ملخصات متطلبات الجامعة - لون أحمر أغمق (Deep Red) */
+        .uni-sum-btn {
+            border-color: #990000; 
+        }
+        .uni-sum-btn:active {
+            /* توهج بلون أحمر عميق عند الضغط */
+            box-shadow: 
+                0 5px 10px rgba(0, 0, 0, 0.2), 
+                0 0 15px 5px rgba(153, 0, 0, 0.8), 
+                0 0 25px 8px rgba(153, 0, 0, 0.5); 
+        }
+
+        /* 2. ملخصات مواد التخصص - لون خمري داكن جداً (Dark Wine) */
+        .spec-sum-btn {
+            border-color: #660000; 
+        }
+        .spec-sum-btn:active {
+            /* توهج بلون خمري غامق جداً عند الضغط */
+            box-shadow: 
+                0 5px 10px rgba(0, 0, 0, 0.2), 
+                0 0 15px 5px rgba(102, 0, 0, 0.8), 
+                0 0 25px 8px rgba(102, 0, 0, 0.5); 
+        }
+
+        /* 3. متطلبات الكلية - لون أحمر أكثر حيوية (Vibrant Red) */
+        .coll-req-btn {
+            border-color: #CC0000; 
+        }
+        .coll-req-btn:active {
+            /* توهج بلون أحمر ساطع عند الضغط */
+            box-shadow: 
+                0 5px 10px rgba(0, 0, 0, 0.2), 
+                0 0 15px 5px rgba(204, 0, 0, 0.8), 
+                0 0 25px 8px rgba(204, 0, 0, 0.5); 
+        }
+
+        /* 4. فئة احتياطية في حال عدم التطابق */
+        .default-sum-btn {
+            border-color: #8b0000; 
+        }
+        .default-sum-btn:active {
+            /* توهج خمري قياسي */
+            box-shadow: 
+                0 5px 10px rgba(0, 0, 0, 0.2), 
+                0 0 15px 5px rgba(139, 0, 0, 0.8), 
+                0 0 25px 8px rgba(139, 0, 0, 0.5); 
+        }
+
+        /* تصميم بطاقة وصورة عضو الهيئة التدريسية */
+        .staff-card {
+            text-align: center;
+        }
+        .staff-card img {
+            width: 80%; /* صورة أصغر للدائرة */
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%; /* شكل دائري */
+            margin: 10px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .staff-name {
+            font-weight: bold;
+            color: rgb(83, 16, 16);
+            padding: 5px;
+            font-size: 0.9em;
+        }
+        /* **نهاية الأنماط الجديدة** */
+
 
         /* بطاقة البوابة (الصورة مع الكبسة) */
         .gate-card {
@@ -102,22 +230,17 @@
             transform: translateY(-5px);
         }
 
-        /* بطاقة البوابة (الصورة مع الكبسة) */
-        /* ... الأنماط الأخرى ... */
-
         /* تعديل الأنماط هنا لجعل الصورة أصغر وموسّطة */
         .gate-card img {
             width: 80%; /* تم تصغير العرض من 100% إلى 80% */
             display: block; /* ضروري لتوسيط العنصر */
-            aspect-ratio: 1 / 1; 
+            aspect-ratio: 1 / 1;
             object-fit: cover; 
             border-radius: 50%; /* شكل دائرة */
             margin: 10px auto; /* توسيط الدائرة وإضافة مسافة */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: border 0.3s;
         }
-        
-        /* ... باقي الأنماط ... */
         
         .gate-card:hover img {
             border: 4px solid rgb(83, 16, 16); /* إطار عند التحويم */
@@ -138,23 +261,19 @@
         .gate-card button:hover {
             background-color: #3a0000;
         }
-        /* ... باقي أنماط CSS ... */
         
-        /* هذا النمط يطبق فقط على صور الواجهة الثانوية (المواد) */
-      /* أنماط خاصة للواجهة الثانية (المواد): تجعل الصور مربعة */
+        /* أنماط خاصة للواجهة الثانية (المواد): تجعل الصور مربعة */
         #secondary-gate .gate-card img {
             border-radius: 8px; /* شكل مربع بزوايا ناعمة */
-            width: 70%; /* يمكنك الحفاظ على هذا التعديل لتقليص حجمها */
+            width: 70%; 
         }
 
         /* أنماط خاصة للواجهة الثالثة (المعرض): تجعل الصور مربعة */
         #gallery-view .gate-card img {
             border-radius: 8px; /* شكل مربع بزوايا ناعمة */
-            width: 80%; /* يمكن إبقاؤها على حجم الـ 80% */
+            width: 80%; 
         }
         
-        /* ... باقي أنماط CSS ... */
-
         /* النمط الجديد لاسم الكلية/التخصص في الواجهة الرئيسية */
         .college-name-label {
             background-color: rgb(83, 16, 16);
@@ -175,6 +294,9 @@
             .gate-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+            .tertiary-grid {
+                 grid-template-columns: repeat(2, 1fr); /* عمودان في الواجهة الثالثة على الشاشات المتوسطة */
+            }
         }
 
         @media (max-width: 768px) {
@@ -188,18 +310,19 @@
             #gallery-view .gate-grid {
                  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة في المعرض */
             }
-            
-            /* **التعديل الثاني: تحسين عرض الشريط العلوي (Navbar) على الهاتف** */
-            .navbar {
-                /* إزالة التوسيط وضمان بدء الروابط من اليمين (RTL) */
-                justify-content: flex-start; 
-                /* حجز مساحة كبيرة في اليمين (right-padding) حتى لا يصل الروابط لمنطقة زر القائمة الثابت */
-                padding-right: 120px; 
-                padding-left: 5px; 
+            .tertiary-grid {
+                 grid-template-columns: repeat(2, 1fr); /* 2 عمود في الواجهة الثالثة */
             }
-            /* **زيادة المسافة الأفقية بين الروابط** */
+            
+            /* تحسين عرض الشريط العلوي (Navbar) على الهاتف */
+            .navbar {
+                 justify-content: flex-start; 
+                 padding-right: 120px;
+                 padding-left: 5px; 
+            }
+            /* زيادة المسافة الأفقية بين الروابط */
             .navbar a {
-                padding: 12px 15px; /* تم زيادة المسافة الأفقية */
+                padding: 12px 15px;
                 font-size: 0.9em;
             }
         }
@@ -210,26 +333,29 @@
             }
              /* تعديل الواجهة الثانوية والثالثة لتكون عمود واحد على أصغر الشاشات */
             #secondary-gate .gate-grid {
-                 grid-template-columns: 1fr; 
+                 grid-template-columns: 1fr;
             }
             #gallery-view .gate-grid {
                  grid-template-columns: 1fr;
+            }
+            .tertiary-grid {
+                 grid-template-columns: 1fr; /* عمود واحد في الواجهة الثالثة */
             }
             
             /* تعديل الـ Navbar على أصغر الشاشات */
              .navbar {
                  padding-right: 90px; /* تقليل المساحة المحجوزة أكثر للشاشات الصغيرة جداً */
             }
-            /* **زيادة المسافة الأفقية بين الروابط** */
+            /* زيادة المسافة الأفقية بين الروابط */
             .navbar a {
-                padding: 8px 12px; /* تم زيادة المسافة الأفقية */
-                font-size: 0.75em; /* تقليل حجم الخط أكثر */
+                padding: 8px 12px;
+                font-size: 0.75em;
             }
         }
 
         /* أنماط الـ Modal (لواجهة معرض الصور الثالثة) */
         .modal {
-            display: none; 
+            display: none;
             position: fixed; 
             z-index: 2000; 
             padding-top: 60px; 
@@ -239,7 +365,7 @@
             height: 100%; 
             overflow: auto; 
             background-color: rgb(0,0,0); 
-            background-color: rgba(0,0,0,0.9); 
+            background-color: rgba(0,0,0,0.9);
         }
 
         .modal-content {
@@ -363,7 +489,7 @@
         /* التذييل المحسن */
         footer {
             background: rgb(83, 16, 16);
-            color: var(--white);
+            color: white;
             padding: 40px 0 20px;
             margin-top: 70px;
         }
@@ -396,8 +522,7 @@
             height: 55px;
             background-color: rgba(255, 255, 255, 0.342);
             border-radius: 50%;
-            /* **إصلاح لون الأيقونة لتظهر على الخلفية الداكنة** */
-            color: #f4f4f4; 
+            color: #f4f4f4;
             font-size: 1.5rem;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -497,10 +622,12 @@
         <br><br><br>
 
         <li class="section-title"> أهل العزم</li>
-        <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfya1bThzDPsKIf8SS_qatImLl5Trlo5T3MMMLRwPwPAutHqw/viewform?usp=header">شاركنا ملخصاتك</a></li>
+        <li class="sub-item"><a href="ahlal3azem332@gmail.com">اسألني</a></li>
+        <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfya1bThzDPsKIf8SS_qatImLl5Trlo5T3MMMLRwPwPAutHqw/viewform?usp=header">انضم لنا</a></li>
         <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf7Q9Kz4UaI4RjJ4hVx05EOFUpAQW9jPtQjoD2yRuxIuAsPIQ/viewform?usp=header">اقتراحاتك</a></li>
         <li class="section-title"> تقييم الخدمة</li>
         <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeX5jqUNrFJhJjpr_Pp9aatENqS0L1D1DO1FEFoXru41WLxbw/viewform?usp=header">تقييم الخدمة</a></li>
+   
     </ul>
 </div>
 
@@ -516,41 +643,49 @@
             <h2>ملخصات أهل العزم </h2>
             <div class="gate-grid">
                 
+           
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img1')">
                     <img src="https://i.ibb.co/1tBCMN3q/IMG-20250220-WA0087.jpg" alt="كلية الدعوة و أصول الدين">
                     <div class="college-name-label">كلية الدعوة و أصول الدين</div>
                 </div>
                 
+         
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img2')">
                     <img src="https://i.ibb.co/TxXJCQh7/IMG-20250220-WA0091.jpg" alt="كلية الشيخ نوح القضاة للشريعة و القانون">
                     <div class="college-name-label">كلية الشيخ نوح القضاة للشريعة و القانون</div>
                 </div>
                 
+   
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img3')">
                     <img src="https://i.ibb.co/KpZjPG1J/IMG-20250220-WA0094.jpg" alt="كلية تكنولوجيا المعلومات">
                     <div class="college-name-label">كلية تكنولوجيا المعلومات</div>
                 </div>
                 
+     
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img4')">
                     <img src="https://i.ibb.co/RG6JRDn5/IMG-20250220-WA0097.jpg" alt="كلية المال والأعمال">
                     <div class="college-name-label">كلية المال والأعمال</div>
                 </div>
                 
+       
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img5')">
                     <img src="https://i.ibb.co/Z6MnZytK/IMG-20250220-WA0111.jpg" alt="كلية الفنون">
                     <div class="college-name-label">كلية الفنون و العمارة الاسلامية</div>
                 </div>
                 
+        
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img6')">
                     <img src="https://i.ibb.co/FkkDd6TQ/IMG-20250220-WA0112.jpg" alt="كلية العلوم التربوية">
                     <div class="college-name-label">كلية العلوم التربوية</div>
                 </div>
                 
+          
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img7')">
                     <img src="https://i.ibb.co/YBzP4QhF/IMG-20250220-WA0113.jpg" alt="كلية الآداب و العلوم">
                     <div class="college-name-label">كلية الآداب و العلوم</div>
                 </div>
                 
+          
                 <div class="gate-card" onclick="showGate('secondary-gate', 'img8')">
                     <img src="https://i.ibb.co/ZRJgjXxm/IMG-20250220-WA0114.jpg" alt="كلية المذاهب الفقهية">
                     <div class="college-name-label">كلية المذاهب الفقهية</div>
@@ -558,32 +693,57 @@
             </div>
         </div>
 
+        
         <div id="secondary-gate" class="gate-view" style="display: none;">
             
             <h2 id="secondary-gate-title">المحتوى والمواد التعليمية </h2>
-            <h3>اختر المادة   :</h3>
+            <h3>اختر المادة :</h3>
             
             <div class="gate-grid" id="secondary-gate-content">
                 </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
+          
+            <div style="text-align: center;
+            margin-top: 30px;">
                 <button 
                     onclick="showGate('main-gate')" 
-                    style="background-color: rgb(83, 16, 16); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1.1em; transition: background-color 0.3s;">
+                    style="background-color: rgb(83, 16, 16);
+                    color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1.1em;
+                    transition: background-color 0.3s;">
                       العودة للكليات
                 </button>
             </div>
         </div>
         
-       <div id="gallery-view" class="gate-view" style="display: none;">
+        <div id="gallery-view" class="gate-view" style="display: none;">
             <h2 id="gallery-view-title">الخطة الشجرية للتخصص</h2> 
-            
+    
+         
             <div class="gate-grid">
+                </div>
+            
+            <div style="text-align: center;
+            margin-top: 30px;">
+                <button 
+                    id="gallery-return-button" 
+                    onclick="showGate('secondary-gate')" 
+                    style="background-color: rgb(83, 16, 16);
+                    color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1.1em;
+                    transition: background-color 0.3s;">
+                     العودة للمواد
+                </button>
+            </div>
+        </div>
+
+        <div id="tertiary-gate" class="gate-view" style="display: none;">
+            <h2 id="tertiary-gate-title"></h2> 
+            <h3>اختر المادة :</h3>
+            
+            <div class="tertiary-grid" id="tertiary-gate-content">
                 </div>
             
             <div style="text-align: center; margin-top: 30px;">
                 <button 
-                    id="gallery-return-button" 
+                    id="tertiary-return-button" 
                     onclick="showGate('secondary-gate')" 
                     style="background-color: rgb(83, 16, 16); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1.1em; transition: background-color 0.3s;">
                      العودة للمواد
@@ -591,12 +751,30 @@
             </div>
         </div>
 
+        <div id="staff-gallery-view" class="gate-view" style="display: none;">
+            <h2 id="staff-gallery-view-title"></h2> 
+            
+            <div class="tertiary-grid" id="staff-gallery-content">
+                </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button 
+                    id="staff-return-button" 
+                    onclick="showGate('secondary-gate')" 
+                    style="background-color: rgb(83, 16, 16); color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1.1em; transition: background-color 0.3s;">
+                     العودة للمواد
+                </button>
+            </div>
+        </div>
+
+
     </div> 
     
     <div id="imageModal" class="modal" onclick="closeModal()">
       <span class="close" onclick="closeModal()">&times;</span>
       <img class="modal-content" id="modalImage">
       <div id="caption"></div>
+ 
     </div>
     
 <section class="message-card" data-aos="fade-up">
@@ -607,11 +785,12 @@
 <div id="aboutSection" class="about-modal" onclick="closeAbout(event)">
   <div class="about-content" onclick="event.stopPropagation()">
     <h2>من نحن</h2>
-    <p>فريق طلابي طموح، انطلق سعيًا لخدمة الطلبة وتثقيفهم ورفع مستوى الوعي عندهم، وتقديم يد العون لهم أكاديميًا وتربويًا وعلميًا.</p>
+    <p>فريق طلابي طموح، انطلق سعيًا لخدمة الطلبة وتثقيفهم ورفع مستوى الوعي عندهم، وتقديم يد العون لهم أكاديميًا وتربوياً وعلمياً.</p>
 
     <div class="about-box">
       <h3>رؤيتنا </h3>
-      <p>شباب جامعي واعٍ وفاعل ومؤثر يمتلك أدوات النجاح والتغيير في ساحات العمل الجامعي.</p>
+      <p>شباب جامعي واعٍ وفاعل ومؤثر يمتلك أدوات النجاح والتغيير في ساحات 
+ العمل الجامعي.</p>
     </div>
 
     <div class="about-box">
@@ -623,7 +802,8 @@
       <h3>أهدافنا </h3>
       <ul>
         <li>تعميق شعور الانتماء عند الطلبة على عدة مستويات منها الانتماء للدين والأمة والوطن والجامعة.</li>
-        <li>خدمة الطالب أكاديمياً وبكل ما يلزم.</li>
+        <li>خدمة الطالب 
+ أكاديمياً وبكل ما يلزم.</li>
         <li>نشر الوعي والفكر والرسائل القيمية بين طلبة الجامعة بالقضايا المختلفة.</li>
         <li>نشر مفهوم الخيرية عند الطلبة وتشجيعهم على البذل والعطاء.</li>
         <li>توعية الطلبة بحقوقهم وواجباتهم.</li>
@@ -632,7 +812,8 @@
       </ul>
     </div>
 
-    <button class="close-btn-modal" onclick="closeAbout()">الرجوع</button>
+    
+ <button class="close-btn-modal" onclick="closeAbout()">الرجوع</button>
   </div>
 </div>
 
@@ -642,21 +823,25 @@
                 <h3 class="contact-title">تواصل معنا</h3>
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/18asBMgmfY/" class="social-link" target="_blank">
+                
                         <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://www.instagram.com/azem_wise?igsh=azM2MGNla3VhaGpv" class="social-link" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
+ 
                     <a href="https://t.me/azem_wise" class="social-link" target="_blank">
                         <i class="fab fa-telegram-plane"></i>
                     </a>
                 </div>
+                
                 <div class="instagram-info">
                     
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2025 أهل العزم. جميع الحقوق محفوظة.
+                &copy;
+ 2025 أهل العزم. جميع الحقوق محفوظة.
             </div>
         </div>
     </footer>
@@ -664,66 +849,247 @@
    <script>
         
         // ==============================================
-        // 1. بيانات الكليات والمواد (Links Object)
-        // **تم إضافة حقل gallery_thumb لكل كلية**
+        // 1. بيانات الكليات والمواد (Links Object) - تم تحديث الهيكل هنا
         // ==============================================
+
+        // 1.1: ملخصات متطلبات الجامعة (ثابتة لجميع الكليات)
+        const universityRequirements = [
+            // يرجى استبدال الروابط '#' بروابط الدرايف الخاصة بك
+                    {name: `ملخص مادة الاحسان)`, link: "https://drive.google.com/file/d/145853HZ6B6IA6jWW4l4HvHwptTLy_NnF/view?usp=sharing"}, 
+                    {name: `ملخص مادة الاعجاز العلمي في القران و السنة)`, link: "https://drive.google.com/file/d/106-WnrrhdRG0IRi6SOB8euXwJ67KXsae/view?usp=sharing"},
+                    {name: `ملخص مادة تربية وطنية `, link: "https://drive.google.com/file/d/1nd56JFeaa4tHSv0qyDNpVKvDnCjuxq9u/view?usp=sharing"},
+                    {name: `ملخص مادة لغة عربية (101)`, link: "https://drive.google.com/file/d/11nqqRAIHuzwFTqzfJv1n5GtdZHoYHDtE/view?usp=sharing"},
+                    {name: `ملخص مادة لغة انجليزية (101)`, link: "https://drive.google.com/file/d/11ko8PzbIrXh4N4xNWu90dGI42lF0cuI3/view?usp=sharing"},
+                    {name: `ملخص مادة ثقافة رقمية`, link: "https://drive.google.com/file/d/1YV5RxS_FE4bL-MWpzH28vAKNlqMBgG9T/view?usp=sharing"},
+                    {name: `ملخص مادة علوم عسكرية `, link: "https://drive.google.com/file/d/1Ry7aJ3X2A2Zs8aqntK5UNVOdADViCECx/view?usp=sharing"},
+                    {name: `ملخص مادة السيرة النبوية`, link: "https://drive.google.com/file/d/1N-ooDz4n8InlcDXAr7P5hpf8-JHBY48t/view?usp=sharing"},
+                    {name: `ملخص مادة الصحة و التغذية`, link: "https://drive.google.com/file/d/1MTz6WExi7DxpdIXWHmUsmGVPD4HFpySe/view?usp=sharing"},
+                    {name: `ملخص مادة القانون في حياتنا  `, link: "https://drive.google.com/file/d/1XTwS03DvvHp5lwocQWcDhioPyitCQbBU/view?usp=sharing"},
+                    {name: `ملخص مادة القران الكريم و تلاوته`, link: "https://drive.google.com/file/d/1x4hQKFZXQDLfQaDKtGxHfvPoSDPnn0N3/view?usp=sharing"},
+                    {name: `ملخص مادة مدخل الى العقيدة الاسلامية  `, link: "https://drive.google.com/file/d/1dgSZ8Efd72x9CY8nhVhEmIXAcquT7iqi/view?usp=sharing"},
+                    {name: `ملخص مادة قضايا معاصرة`, link: "https://drive.google.com/file/d/1TJvjnfx2Da8jUOQ9J6-XQVJE_p7c8U31/view?usp=sharing"},
+                    {name: `ملخص مادة الريادة و الابتكار`, link: "https://drive.google.com/file/d/1B_DUWwafQpledffvpAd6adVI4kWb5zvF/view?usp=sharing"},
+                    {name: `ملخص مادة الثقافة الاسلامية`, link: "https://drive.google.com/file/d/1kM495w0r_HiFCtR-mbqg5QWa2znkjRdX/view?usp=sharing"},
+                    {name: `ملخص مادة نظام الاسرة و المجتمع`, link: "https://drive.google.com/file/d/1JaDy_at79ZxYSfNhQmok6VrIXciLeDET/view?usp=sharing"},
+                    {name: `ملخص مادة لغة عربية (99)`, link: "https://drive.google.com/file/d/18vLZRwwWOQ0TGuzAHWA3PpQbIt8f3pdw/view?usp=sharing"},
+                    {name: `ملخص مادة مهارات الحاسوب  (99)`, link: "https://drive.google.com/file/d/1NrU37E9SemY3tKUpcJ0OlIv5augch4Mj/view?usp=sharing"},
+                    {name: `ملخص مادة لغة انجليزية (99)`, link: "https://drive.google.com/file/d/1RwWigEJwwp5iJX7YVm43aS0iWt2KLn7R/view?usp=sharing"},
+
+        ];
+
+        // *** ملاحظة: تم حذف دالة staffPlaceholders() وتم وضع البيانات مباشرة لكل كلية ***
+
         const links = {
             'img1': { // كلية الدعوة و أصول الدين
                 name: 'كلية الدعوة و أصول الدين',
                 courses: [
-                    {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/WWgcpptX/5999043752087374122.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1DZ5nKkampE8kj0cXDLY5v8vIzwnRad6n?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/qY231YD9/5999043752087374121.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1GBC1jxeU5XBRn905-Ioq8IScFVvdnsm8?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/tTn0kY46/5999043752087374124.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/1EvSlDK1MqDvTUxIxOb0k4Cc5yiuPaxqj?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/4RFqXTF1/5998918171538606316.jpg"} 
+                    // متطلبات الجامعة (ثابتة)
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/WWgcpptX/5999043752087374122.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية) - (يمكن إضافة أو حذف أي عدد من المواد)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/qY231YD9/5999043752087374121.jpg", sub_items: [
+                        {name: `اساليب البحث في الدراسات الاسلامية`, link: "https://drive.google.com/file/d/1Cl8gdcbfPPQdvJyTvU2Xkw5Sxknhe0nB/view?usp=sharing"},
+                        {name: ` اعجاز القران الكريم`, link: "https://drive.google.com/file/d/1C_ln-Jedevj8KBHQd43i-jQ3ipb44RtC/view?usp=sharing"},
+                        {name: ` مدخل الى علم القانون`, link: "https://drive.google.com/file/d/1CRQMtPLFzH_cqwvEYkRIquIPbRFgHrGK/view?usp=sharing"},
+                        {name: `العقيدة الاسلامية د محمد النويهي `, link: "https://drive.google.com/file/d/1DaHcmPmqBGtOH-UkK9C7llAjm0cft1eN/view?usp=sharing"},
+                        {name: `علم المنطق `, link: "https://drive.google.com/file/d/1DeLXkfbDXjOuyWZ41fJdC24MzyQg0rRX/view?usp=sharing"},
+                       
+
+                        // بإمكانك إضافة المزيد هنا
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية) - (يمكن إضافة أو حذف أي عدد من المتطلبات)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/tTn0kY46/5999043752087374124.jpg", sub_items: [
+                        {name: `متطلب الكلية - فقه 1 (دعوة)`, link: "#"},
+                        {name: `متطلب الكلية - لغة عربية 2 (دعوة)`, link: "#"},
+                        {name: `متطلب الكلية - تاريخ الحضارة (دعوة)`, link: "#"},
+                        // بإمكانك إضافة المزيد هنا
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية) - (يمكن إضافة أو حذف أي عدد من الأعضاء)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/4RFqXTF1/5998918171538606316.jpg", staff_items: [
+                        
+ { name: 'د. نزار عطا الله', src: "https://i.supaimg.com/917bc063-1026-4aad-8d45-a196bd3a51f4.jpg"},
+{ name:' د. نزار الشياب', src: "https://i.supaimg.com/404947c4-ec95-470e-9dac-dc3bbd0a1139.jpg"},
+{ name: 'د. أمين دغمش', src: "https://i.supaimg.com/81295290-46b5-4518-963d-1c17ffdb1a7f.jpg"},
+{ name:' د. أحمد البشايرة', src: "https://i.supaimg.com/95a43ef0-3da7-405c-a270-0d1939d4f2b3.jpg"},
+{ name:' د. يزيد الشباب', src: "https://i.supaimg.com/e47ed688-b979-4788-b25b-dfdab2deed47.jpg"},
+{ name: 'د. محمد السواعدة', src: "https://i.supaimg.com/f0d53bb5-7e5f-4291-9d80-9d6bcdcaf352.jpg"},
+{ name:' د. جمال حسان', src: "https://i.supaimg.com/939dec4d-f45a-4918-9afa-65242cd08abe.jpg"},
+{ name: 'د. محمد النويهي', src: "https://i.supaimg.com/001a7034-dfba-4fb9-9dcc-f9a538d9c52c.jpg"},
+{ name: 'د. فايز أبوعميرة', src: "https://i.supaimg.com/c65a86cb-19f2-47a0-aa03-95429e1f5fca.jpg"},
+{ name:' د. عامر الملاحمة', src: "https://i.supaimg.com/82d82cee-30c1-479b-a8ff-e1ebc108866d.jpg"},
+{ name: 'د. حمدي مراد', src: "https://i.supaimg.com/121f279c-651b-4f28-b59f-884c1b57aa80.jpg"},
+{ name:' د. أحمد عبد الله أحمد', src: "https://i.supaimg.com/ac73b5ed-112e-423a-87ea-360265a08226.jpg"},
+{ name: 'د. ابتهاج الرحمن', src: "https://i.supaimg.com/71458172-578d-4584-9865-bef7daa5b670.jpg"},
+{ name: 'د. زكي البشايرة', src: "https://i.supaimg.com/54976652-4b01-469d-a783-948873438b9d.jpg"},
+{ name: 'د. محمد سالم حرشة', src: "https://i.supaimg.com/bf11c238-4e5a-4ede-bb13-aad2c8a65769.jpg"},
+{ name: 'د. مهند الحوراني', src: "https://i.supaimg.com/110f0dec-eb58-4587-b470-ce2d727ed2ff.jpg"},
+{ name: 'د. سونا عبادي', src: "https://i.supaimg.com/1131ab79-72c4-4d53-b2c5-5afd9d580e40.jpg"},
+{ name:' د. خليل العبادي', src: "https://i.supaimg.com/efb1d51a-9c23-4a64-ad99-234e5e5b7b95.jpg"},
+{ name: 'د. يحيى القضاة', src: "https://i.supaimg.com/e1262ab9-d93d-46ff-a9ae-c92398c1a304.jpg"},
+{ name: 'د. محمد ذيب', src: "https://i.supaimg.com/4a2115af-52e9-4a87-856a-32881ba63d4e.jpg"},
+{ name: 'د. مختار الشنقيطي', src: "https://i.supaimg.com/90d23b02-4527-43d7-ad24-2e7d3e184f3e.jpg"},
+{ name: 'د. ياسر السيد نوير', src: "https://i.supaimg.com/ba8d3663-90c7-402d-8d2b-a4314f4fc068.jpg"},
+{ name:' د. محمد هاشم', src: "https://i.supaimg.com/9d623307-977c-4469-956c-55d857090923.jpg"},
+
+                        // بإمكانك إضافة المزيد هنا
+                    ]} 
                 ],
-                gallery_images: [ // صور معرض كلية الدعوة (مثال)
+                gallery_images: [ // صور معرض كلية الدعوة (الخطة الشجرية)
                     { src: "https://i.ibb.co/1Yc050vR/c.png", caption: "التجويد و الأداء الصوتي   " },
                     { src: "https://i.ibb.co/XRFkrxG/g.png", caption: "القراءات القرانية  " },
                     { src: "https://i.ibb.co/5WCDsdW2/ll.png", caption: "أصول الدين  " }
                 ],
-                // **رابط الصورة المصغرة لبطاقة المعرض في الواجهة الثانية**
-                gallery_thumb: "https://i.ibb.co/gZjW5jLg/5998918171538606315-1.jpg" // الصورة المخصصة لكلية الدعوة
+            
+                gallery_thumb: "https://i.ibb.co/gZjW5jLg/5998918171538606315-1.jpg"
             },
             'img2': { // كلية الشيخ نوح القضاة للشريعة و القانون 
                 name: 'كلية الشيخ نوح القضاة للشريعة و القانون',
                 courses: [
-                    {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/CpJ37gjG/5999043752087374111.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1CBsEgx_BKT6LqUj3xZzjPCTWCZQBN_Vs?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/Kc2wxMZ4/5999043752087374114.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1GBC1jxeU5XBRn905-Ioq8IScFVvdnsm8?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/Mk66Vvgj/5999043752087374113.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/1vQxDhuv1Jwv04NgHjE5Mx7gWypx7f5aT?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/BHbq0GP0/5998918171538606304-1.jpg"} 
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/CpJ37gjG/5999043752087374111.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/Kc2wxMZ4/5999043752087374114.jpg", sub_items: [
+                         {name: `ملخص الفقه الجنائي الاسلامي ميد (تخصص الفقه و اصوله)`, link: "https://drive.google.com/file/d/1DhJbW11EB_IIhk6IQFgVRLLZ4oI9Ug0w/view?usp=sharing"},
+                         {name: `ملخص النظام السياسي الاسلامي ميد (تخصص الفقه و اصوله)`, link: "https://drive.google.com/file/d/1DgCSJTTffSEhKd6B3YtD853Ao9vXrrJU/view?usp=sharing"},
+                         {name: `ملخص مدخل الى علم القانون  (نخصص القانون)`, link: "https://drive.google.com/file/d/1D4SaoVSfEvPzpJRNWa4wpGzFQTsJ5mJR/view?usp=sharing"},
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/Mk66Vvgj/5999043752087374113.jpg", sub_items: [
+                         {name: `متطلب الكلية - فلسفة اسلامية ميد`, link: "https://drive.google.com/file/d/1Fxg155-ICK8hhBvUcKZqYVSHD9PGPKge/view?usp=sharing"},
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/BHbq0GP0/5998918171538606304-1.jpg", staff_items: [
+
+{ name:' د. عمر العرايشي', src: "https://i.supaimg.com/f88ee334-12a5-4468-8a0a-a25ea0762085.jpg"},
+{ name: 'د. سلام الطراونة', src: "https://i.supaimg.com/5eeba2a1-58b8-4575-a41f-77feff6add9d.jpg"},
+{ name:' د. عبير الرواحنة', src: "https://i.supaimg.com/6e1a3039-4a8d-45db-ac70-da263a89deba.jpg"},
+{ name:' د. وجدان ارتيمه', src: "https://i.supaimg.com/8d2c5170-ef7e-44a1-861d-54475138ddab.jpg"},
+{ name: 'د. زيد المجالي', src: "https://i.supaimg.com/676c052b-c5ea-4a33-9e2e-3cfa02b4e66f.jpg"},
+{ name: 'د. أوس العضايلة', src: "https://i.supaimg.com/4fac5c53-195e-41fa-bcf2-6d8c9fc94ac1.jpg"},
+{ name:' د. أمجد الحمد', src: "https://i.supaimg.com/8968d32e-a3d6-4458-9a80-ba26400412b0.jpg"},
+{ name: 'د. حنان الظاهر', src: "https://i.supaimg.com/570402e4-0781-4222-9e27-b79a902a8662.jpg"},
+{ name: 'د. ممدوح العدوان', src: "https://i.supaimg.com/bcb5fae2-eab3-4fec-9678-ca4c438d316c.jpg"},
+{ name:' د. إبراهيم الأرناؤوط', src: "https://i.supaimg.com/24006931-9ae4-43ed-8bce-0a6e8d39eff9.jpg"},
+{ name: 'د. عبد السلام همّاش', src: "https://i.supaimg.com/fd98ef15-5f9b-4c2d-b1d6-22795beb9479.jpg"},
+{ name:' د. طه العطيات', src: "https://i.supaimg.com/44b2f221-1b4e-400b-a0ac-5e50b1338c01.jpg"},
+{ name: 'د. إبراهيم الصرايرة', src: "https://i.supaimg.com/f392ea13-065b-455d-a9bb-6fc8711d728d.jpg"},
+{ name: 'د. علا عباسي', src: "https://i.supaimg.com/d3dcac3e-9444-487d-a867-19c1bcbbab8a.jpg"},
+{ name:' د. أحمد صباح', src: "https://i.supaimg.com/f22b6345-dde7-4060-8c01-a83e8596c4b0.jpg"},
+{ name: 'د. جهاد الجراح', src: "https://i.supaimg.com/a0faeaac-c5cd-4e60-8351-e5d8ff15dc14.jpg"},
+{ name: 'د. محمد أبو الهيجا', src: "https://i.supaimg.com/d0ad1eeb-3f4d-4263-b9db-16c8d4c013e3.jpg"},
+                ]} 
                 ],
-                 gallery_images: [ // صور معرض كلية الشريعة (مثال)
+                 gallery_images: [ 
                     { src: "https://i.ibb.co/60rDmprQ/m.png", caption: " القانون" },
                     { src: "https://i.ibb.co/4wgK2kmV/w.png", caption: " الفقه و أصوله " }
                 ],
-                gallery_thumb: "https://i.ibb.co/My2RF0cS/5998918171538606305-2.jpg" // الصورة المخصصة لكلية الشريعة
+                gallery_thumb: "https://i.ibb.co/My2RF0cS/5998918171538606305-2.jpg" 
             },
             'img3': { // كلية تكنولوجيا المعلومات
                 name: 'كلية تكنولوجيا المعلومات',
                 courses: [
-                     {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/4RXQzW9Q/5999043752087374119.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1C3w7brnWtozL0k_LGVBDsPwitCMyj4ME?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/GfZkb6zn/5999043752087374118.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1C3w7brnWtozL0k_LGVBDsPwitCMyj4ME?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/k6m4Sk2P/5999043752087374120.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/1XXDhtMCd0X_z81fDUc8uWgwFW3_AXeOI?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/HLV3MBqm/5998918171538606313.jpg"} 
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/4RXQzW9Q/5999043752087374119.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/GfZkb6zn/5999043752087374118.jpg", sub_items: [
+                         {name: `ملخص قواعد البيانات (IT)`, link: "https://drive.google.com/file/d/1veE8F79LZRkCaR-011DOu6nHDuVLHNZ8/view?usp=sharing"},
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/k6m4Sk2P/5999043752087374120.jpg", sub_items: [
+                         {name: `متطلب الكلية - رياضيات (IT)`, link: "#"},
+                         {name: `متطلب الكلية - برمجة 1 (IT)`, link: "#"},
+                         {name: `متطلب الكلية - إحصاء (IT)`, link: "#"},
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/HLV3MBqm/5998918171538606313.jpg", staff_items: [
+                        {name: `د معاذ حسني الطراونة`, src: "https://i.supaimg.com/af2a9573-ec11-4e92-86ff-9574313a4db6.jpg"},
+                        {name: `د مهند عوض طحبوش`, src: "https://i.supaimg.com/207107fa-f021-4220-bd7b-c65dc518822b.jpg"},
+                        {name: `د مروة مصطفى عليان`, src: "https://i.supaimg.com/a775219a-9768-4117-b495-28bf89af311b.jpg"},
+                        {name: ` د صفاء خالد الصرايرة`, src: "https://i.supaimg.com/688a75b4-eae6-4e5c-b83d-5111820d6159.jpg"},
+                        {name: `د صهيب عبد الكريم الحيري`, src: "https://i.supaimg.com/21ccabbb-e331-4b55-a45f-58cf89684354.jpg"},
+                        {name: `د هديل ضا الشبول`, src: "https://i.supaimg.com/e6b60f79-66c0-46a2-a2b9-ac15bf614bba.jpg"},
+                        {name: `د رجاء محمد عبد القادر مساعدة`, src: "https://i.supaimg.com/5efe5771-2479-4e4c-aadc-3e83e3c49cb4.jpg"},
+                        {name: `د سمية محمد ابو فخر`, src: "https://i.supaimg.com/97c8ce32-5d8e-4ea4-9aaf-f699f22d527d.jpg"},
+                        {name: `د محمد حسن بني عطا`, src: "https://i.supaimg.com/1f15087d-67a0-41a9-8c7d-0ec5c384bc60.jpg"},
+                
+                    ]} 
                 ],
-                gallery_images: [
-                    { src: "https://i.ibb.co/tPZzqgLC/f.png", caption: "همدسة البرمجيات  " },
-                    { src: "https://i.ibb.co/Gvb6Yd81/q.png", caption: "علم الحاسوب " },
-                    { src: "https://i.ibb.co/HpDkv9F3/6003465450983380289.jpg", caption: "أمن و سرية المعلومات و الشبكات " },
-                    { src: "https://i.ibb.co/d47MdPRC/6003465450983380291.jpg", caption: "نظم شبكات الحاسوب " }
+                gallery_images: [ 
+                    { src: "https://i.ibb.co/tPZzqgLC/f.png", caption: "هندسة البرمجيات " },
+                    { src: "https://i.ibb.co/m0fL7j4/e.png", caption: "نظم المعلومات الإدارية " },
+                    { src: "https://i.ibb.co/j3gQhQd/r.png", caption: "علم الحاسوب " },
+                    { src: "https://i.ibb.co/CByGj8f/y.png", caption: "نظم المعلومات الحاسوبية " }
                 ],
-                gallery_thumb: "https://i.ibb.co/Lz7Kw0J6/5998918171538606314.jpg" // الصورة المخصصة لكلية تكنولوجيا المعلومات
+                gallery_thumb: "https://i.ibb.co/Lz7Kw0J6/5998918171538606314.jpg" 
             },
-            'img4': { // كلية المال و الأعمال
-                name: 'كلية المال و الأعمال',
+            'img4': { // كلية المال والأعمال
+                name: 'كلية المال والأعمال',
                 courses: [
-                   {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/6xnyvHP/5999043752087374108.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1CBA8SVgJUyNHM2MOpi2vwp2NcEDujAPG?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/9H5PM6PF/5999043752087374106.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1CBA8SVgJUyNHM2MOpi2vwp2NcEDujAPG?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/yBPHNv93/5999043752087374109.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/1xeraIfw-TDJf8gPnvSvo4om9gdQV8qT8?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/7Jc1b5D5/5998918171538606317.jpg"} 
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/YB8nSr0C/5999043752087374108-2.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/4nDGXhK3/5999043752087374106-1.jpg", sub_items: [
+                        {name: `اقتصاد كلي اسلامي `, link: "https://drive.google.com/file/d/1MRyR2XBYfzmGGdYBDtgrdK_AKdwBL-HQ/view?usp=sharing"},
+                        {name: `مبادئ الادارة الحديثة `, link: "https://drive.google.com/file/d/1DgVTas5s9q2W-aaLrb40XKlakh1CGi4h/view?usp=sharing"},
+                       
+
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/pBtF4vc1/5999043752087374109-1.jpg", sub_items: [
+                         {name: `متطلب الكلية - مبادئ الاقتصاد الجزئي (مال وأعمال)`, link: "https://drive.google.com/file/d/1DhJbW11EB_IIhk6IQFgVRLLZ4oI9Ug0w/view?usp=sharing"},
+                         {name: `متطلب الكلية - مبادئ محاسبة (مال وأعمال)`, link: "#"},
+                         {name: `متطلب الكلية - تمويل (مال وأعمال)`, link: "#"},
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/S7qJt9X/5998918171538606311.jpg", staff_items: [
+                       
+  { name:' د.غفران سعيد حجاوي', src: "https://i.supaimg.com/0b64f138-229e-4f8d-9339-1d272f1eee3e.jpg" },
+  { name: 'د.شيرين عودة الله الدعجة', src: "https://i.supaimg.com/bbd49fc6-5da2-41c4-afce-31aaddc0d8a1.jpg" },
+  { name: 'د.علاء قاسم المطارنة', src: "https://i.supaimg.com/0cafa987-eddd-472c-901f-1638a0b1d09b.jpg" },
+  { name: 'د.بسام خليل بقيله', src: "https://i.supaimg.com/8930ab11-f46f-43ac-aa73-cd0c4b0480f1.jpg" },
+  { name:' د.آلاء عطا لطفي جرادات', src: "https://i.supaimg.com/0936a46f-becd-40de-a709-049fdf3dbb94.jpg" },
+  { name:' د.منيرة عبد الله مفلح', src: "https://i.supaimg.com/2d7a910b-2c26-4f35-91e4-47c47ce04210.jpg" },
+  { name:' د.محمد أمين', src: "https://i.supaimg.com/13953f91-dc0a-43e5-82d8-2be106949bb5.jpg" },
+  { name:' د.إلياس عبد الله أبو الهيجاء', src: "https://i.supaimg.com/436877a1-9607-4515-9f8c-63709b991d30.jpg" },
+  { name:' د.خالد محمد شعلان', src: "https://i.supaimg.com/7bc7aa40-8f3c-4577-9cbb-21a13b5ba152.jpg" },
+  { name:' د.نسيم محمد أبو رمان', src: "https://i.supaimg.com/5e9226d1-7b8b-4c4f-b498-715394e9e648.jpg" },
+  { name:' د.عاهد ساكت الحرايزة', src: "https://i.supaimg.com/ddebacc8-1b8d-4362-87bc-d4217e66ca79.jpg" },
+  { name: 'د.طارق هاني الضرغام', src: "https://i.supaimg.com/05555be7-f887-4d54-85af-de8964a7b53e.jpg" },
+  { name:' د.عبير فوزان العبادي', src: "https://i.supaimg.com/7c6145e7-fc6c-4063-b10f-ed3cc4dd5fad.jpg" },
+  { name: 'د.مراد محمد الكساسبة', src: "https://i.supaimg.com/fd63d3b8-846e-4de6-a2d4-06ba3c3ea7ae.jpg" },
+  { name: 'د.محمد عبد الحليم الخرابشة', src: "https://i.supaimg.com/be2a59c0-28de-4623-9808-2f7767c64618.jpg" },
+  { name: 'د.نداء صالح النسور', src: "https://i.supaimg.com/a3461272-f42a-463a-bb49-be67a86b5a43.jpg" },
+  { name: 'د.لايزر حسين الحجاحجة', src: "https://i.supaimg.com/1e53862a-c308-47dc-9a50-7a5a91a9b115.jpg" },
+  { name:' د.رزان عبدالله التخاينة', src: "https://i.supaimg.com/4bf3cf8e-8782-4499-a09d-acfb62088f6f.jpg" },
+  { name: 'د.نادية يوسف جودت', src: "https://i.supaimg.com/9c946eb1-3d86-41ac-9409-934f356197b3.jpg" },
+  { name:' د.وائل عبد الفتاح الصرايره', src: "https://i.supaimg.com/097ab5d8-0673-4de6-bc7d-1ebe61f3af92.jpg" },
+  { name:' د.إسراء جودت منصور', src: "https://i.supaimg.com/31e6392b-927d-42ac-a822-6db53be562a7.jpg" },
+  { name: 'د.عبدالله صلاح حردان', src: "https://i.supaimg.com/169e0967-846b-4f02-99bd-894ca5f7a7eb.jpg" },
+  { name: 'أ.د.أحمد إسماعيل المعاني', src: "https://i.supaimg.com/eaada235-f208-4756-871e-772b6415bbcc.jpg" },
+  { name:' د.حسين أحمد الطروانة', src: "https://i.supaimg.com/13b2d393-4485-4451-a9ea-799dc1a82f3c.jpg" },
+  { name:' د.طلال عبد الكريم القرعان', src: "https://i.supaimg.com/8a6fd090-f52d-408f-9156-ea6c0f8bf701.jpg" },
+  { name:' د.سوسن عبدالله الشاعر', src: "https://i.supaimg.com/3d0cc55f-448d-4cfe-a9ef-b36a1da13e50.jpg" },
+  { name:' أ.د.عبد الفتاح زهير العبداللات', src: "https://i.supaimg.com/d1d22cb7-a76f-41d4-968f-67f70c8f04d3.jpg" },
+  { name:' أ.د عماد يوسف أحمد', src: "https://i.supaimg.com/ebebb5e6-2a1b-44c9-a5bb-235df457bbb3.jpg" },
+  { name:' د.سامر فواز الهواري', src: "https://i.supaimg.com/4ca49835-6c7b-4d76-a713-ff13ed6256f2.jpg" },
+  { name: 'أ.د خالد محمود الشوابكة', src: "https://i.supaimg.com/1dc2c351-a0fb-4b32-bb80-7149031c226d.jpg" },
+  { name:' أ.د. مروان محمد أبو عرابي', src: "https://i.supaimg.com/358ec4e0-2f21-416d-b5e5-cff4a39a72fe.jpg" },
+  { name:' أ.د.نضال عمر زلوم', src: "https://i.supaimg.com/64ed08e7-870c-49a1-8d72-e21ac85ca1c7.jpg" },
+  { name:' أ.د. شاكر جار الله الخشالي', src: "https://i.supaimg.com/d093b3bf-f7b6-41d3-952c-421e5c34a96d.jpg" }
+
+
+                    ]} 
                 ],
-                gallery_images: [
-                    { src: "https://i.ibb.co/1fYsgV17/e.png", caption: "المصارف الاسلامية " },
+                 gallery_images: [
+                    { src: "https://i.ibb.co/1fYsgV17/e.jpg", caption: "المصارف الاسلامية " },
                     { src: "https://i.ibb.co/GfM2T3GH/k.png", caption: "العلوم المالية و المصرفية  " },
                     { src: "https://i.ibb.co/BVXwtzw6/n.png", caption: " ادارة الأعمال " },
                     { src: "https://i.ibb.co/jvdDTmzG/u.png", caption: "نظم المعلومات الادارية  " },
@@ -734,226 +1100,418 @@
             'img5': { // كلية الفنون
                 name: 'كلية الفنون و العمارة الاسلامية',
                 courses: [
-                     {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/pvfSwFg7/5999043752087374131.jpg"},
-                     {link:"#",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/tMXFssGs/5999043752087374128.jpg"},
-                     {link:"#" , name:"متطلبات الكلية", image:"https://i.ibb.co/tPXy9yXg/5999043752087374132.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/13DW90o45rSfzUi0iQoO1RW-MBqLacQ0h?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/ZpX3s27d/5998918171538606310.jpg"} 
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/pvfSwFg7/5999043752087374131.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/tMXFssGs/5999043752087374128.jpg", sub_items: [
+                        
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/tPXy9yXg/5999043752087374132.jpg", sub_items: [
+                        
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/ZpX3s27d/5998918171538606310.jpg", staff_items: [
+                        {name: ` د. أحمد القنا  `, src: " https://i.supaimg.com/63d01b43-1eef-4a54-93e5-84b238dbf838.jpg "},
+                        {name: ` د. هلا الحياري  `, src: " https://i.supaimg.com/a3303c04-d850-481e-b317-a0b2d6f0fa47.jpg "},
+                        {name: `  د. هناء حجازي `, src: " https://i.supaimg.com/d9fe81ce-2650-4d20-ba9f-3c25bfdf8115.jpg "},
+                       
+
+                ]} 
                 ],
-                gallery_images: [
+                gallery_images: [ 
                     { src: "https://i.ibb.co/DDJBWzNm/t.png", caption: "الفنون و العمارة الاسلامية " }
                 ],
-                gallery_thumb: "https://i.ibb.co/p6dw6MV5/5998918171538606309-3.jpg" // الصورة المخصصة لكلية الفنون
+                gallery_thumb: "https://i.ibb.co/p6dw6MV5/5998918171538606309-3.jpg" 
             },
             'img6': { // كلية العلوم التربوية
                 name: 'كلية العلوم التربوية',
                 courses: [
-                     {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/fVVWBmJf/5999043752087374167.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1BzUZfSCF2qDTF2kJjb6uxkoMiu3rcBcd?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/YBgg53KT/5999043752087374169.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1BzUZfSCF2qDTF2kJjb6uxkoMiu3rcBcd?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/9H5pPv0z/5999043752087374168.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/1nrPExeEW5OSSOFyr0kzYobVbFB3-wmrr?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/675rdtfZ/5998918171538606308.jpg"} 
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/fVVWBmJf/5999043752087374167.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/YBgg53KT/5999043752087374169.jpg", sub_items: [
+                         {name: `ملخص مادةاضطراب الوسواس القهري `, link: "https://drive.google.com/file/d/19gOp3tl9sBfqU_G0vloAvZI_6qBcy08q/view?usp=sharing"},
+                         {name: `ملخص مادة التربية و التعليم في الاردن `, link: "https://drive.google.com/file/d/1CtZMrf1mUQ2y0h-4fwMjXYy2Gyhk7feR/view?usp=sharing"},
+                        {name: ` ملخص مادة مدخل الى صعوبات التعلم `, link: "https://drive.google.com/file/d/1D8kqzqNOWQMmfyg-JkFYrbn4jjL5zP7g/view?usp=sharing"},
+                        {name: `ملخص مادة المشكلات السلوكية و اساليب معالجتها `, link: "https://drive.google.com/file/d/1CyTwYb6iRJctilMXvlL3UfsoJDOJRwn_/view?usp=sharing"},
+                        {name: `  ملخص مادة علم النفس التربوي`, link: "https://drive.google.com/file/d/1DQj3p4CGoNSm4DsX7-wAzZuBNbvh2fMc/view?usp=sharing"},
+                        {name: `ملخص مادة ارشاد اسري `, link: "https://drive.google.com/file/d/1FRA7iNJtIHet7eKhHCTkoFo2PbIWuKUa/view?usp=sharing"},
+                        {name: `  ملخص مادة تعديل السلوك ` , link: "https://drive.google.com/file/d/1D3IO1c14K7sEl42TuCDqWExElr_wfJY4/view?usp=sharing"},
+                        {name: `ملخص مادة علم نفس الشواذ  `, link: "https://drive.google.com/file/d/1DQbpZj5gh32Kd1is_QkDyIzDZVvW2HNd/view?usp=sharing"},
+                        {name: `ملخص مادة مبادئ الارشاد النفسي  `, link: "https://drive.google.com/file/d/1Cn-C1HT1Gth1ns6C553dcpXGLh2scM_W/view?usp=sharing"},
+                        {name: `ملخص مادة مدخل الى التربية الخاصة  `, link: "https://drive.google.com/file/d/1D82q5gNm5kRKbVzo4Zvuv-rPiojkwuBA/view?usp=sharing"},
+                        {name: `ملخص مادة نظريات التعلم  `, link: "https://drive.google.com/file/d/1CpQKotpz7jyHycSl5CcsMB7eoo_7JUwc/view?usp=sharing"},
+
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/9H5pPv0z/5999043752087374168.jpg", sub_items: [
+                         {name: `متطلب الكلية - علم نفس (تربوية)`, link: "#"},
+                         {name: `متطلب الكلية - مقدمة في التربية (تربوية)`, link: "#"},
+                         {name: `متطلب الكلية - فلسفة تربوية (تربوية)`, link: "#"},
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/675rdtfZ/5998918171538606308.jpg", staff_items: [
+ 
+ { name:' د. صالح الخوالدة', src: "https://i.supaimg.com/ffc04fc2-34a6-40f8-8a12-f7b0d292867d.jpg"},
+{ name:' د. نائلة عبد الكريم', src: "https://i.supaimg.com/6f1f54d8-cd19-4c4d-bec4-029c29af040e.jpg"},
+{ name: 'د. دعاء العدوان', src: "https://i.supaimg.com/54192e62-b234-4c63-93ea-73069e6b4a00.jpg"},
+{ name: 'د. رحمة الحميدين', src: "https://i.supaimg.com/0c4e7205-2a62-4ddd-a43c-d8721f9c08d0.jpg"},
+{ name: 'د. إيمان المحيسن', src: "https://i.supaimg.com/1354b666-9e04-4084-9c7b-f4cad2c72fe4.jpg"},
+{ name: 'د. طلال العدوان', src: "https://i.supaimg.com/11b240da-03a7-424a-9eab-c05dbc567a17.jpg"},
+{ name: 'د. فريال الشنيكات', src: "https://i.supaimg.com/593ec737-4069-4e20-af0e-67211472cfdd.jpg"},
+{ name:' د. مي مهيدات', src: "https://i.supaimg.com/c367a60a-7bdd-43b7-8367-e01af394eaca.jpg"},
+{ name:' د. يحيى القطاونة', src: "https://i.supaimg.com/1ac9937c-a41d-4e8a-8c2c-761415969169.jpg"},
+{ name: 'د. انشراح المغاربة', src: "https://i.supaimg.com/ad11a49b-7c9c-4150-b48e-e16b52ebe478.jpg"},
+{ name: 'د. شامة الحديدي', src: "https://i.supaimg.com/bd60fde8-3fc4-40c5-af2c-54eac782fe05.jpg"},
+{ name:' د. أفنان الديات', src: "https://i.supaimg.com/9fa6a998-5ae9-4761-9b1e-0a310850ab7e.jpg"},
+{ name: 'د. أحمد العياصرة', src: "https://i.supaimg.com/37261b53-b9ad-40e0-9298-c668d9a1986d.jpg"},
+{ name: 'د. عليا العويدي', src: "https://i.supaimg.com/fa3c723d-3172-448a-a585-a65be685fe0c.jpg"},
+{ name:' د. عبدالله الزعبي', src: "https://i.supaimg.com/7d24a198-85ae-4c67-bc17-4a929c946338.jpg"},
+{ name: 'د. فادية السميحيين', src: "https://i.supaimg.com/5e098a4c-f9ae-457f-8fa0-ff89e917e2cf.jpg"},
+{ name:' د. رهان الطراونة', src: "https://i.supaimg.com/399b2289-420d-4df2-9925-112694b4fea8.jpg"},
+{ name: 'د. دانية عربيات', src: "https://i.supaimg.com/31acad30-cb90-4df2-b714-092c3ff70eb8.jpg"},
+{ name:' د. دعاء العدوان', src: "https://i.supaimg.com/0c24e401-3eef-4682-b69b-f6e537e2ee83.jpg"},
+{ name:' د. فاطمة التلاهين', src: "https://i.supaimg.com/555c65bf-1e2a-4f1c-bd9a-42a212cc769c.jpg"},
+{ name: 'د. عرين الخوالدة', src: "https://i.supaimg.com/16052498-94ca-4f9a-bc30-93f0dc85a935.jpg"},
+{ name: 'د. رندة بركات', src: "https://i.supaimg.com/e250fa5c-9748-4fe8-b068-7de8675a8795.jpg"},
+{ name: 'د. عدي المصاروة', src: "https://i.supaimg.com/e8578290-6f68-426d-a31a-e67f03fa8bd2.jpg"},
+{ name:' د. إبراهيم المعالي', src: "https://i.supaimg.com/49686bdc-580f-44b4-864b-c75b94415de7.jpg"},
+
+                ]} 
                 ],
-                gallery_images: [
-                    { src: "https://i.ibb.co/QvHL6YK4/p.png", caption: "معلم صف  " },
-                    { src: "https://i.ibb.co/x8DjWT3H/6003465450983380112.jpg", caption: "تربية الطفولة المبكرة " },
-                    { src: "https://i.ibb.co/39xS3GJc/6003465450983380292.jpg", caption: "الارشاد و الصحة النفسية   " },
-                    { src: "https://i.ibb.co/39xS3GJc/6003465450983380292.jpg", caption: "التربية الخاصة " }
+                gallery_images: [ 
+                    { src: "https://i.ibb.co/QvHL6YK4/p.png", caption: "معلم صف " }, 
+                    { src: "https://i.ibb.co/x8DjWT3H/6003465450983380112.jpg", caption: "تربية الطفولة المبكرة " }, 
+                    { src: "https://i.ibb.co/39xS3GJc/6003465450983380292.jpg", caption: "الارشاد و الصحة النفسية " }, 
+                    { src: "https://via.placeholder.com/150/c0392b/FFFFFF?text=تربية+5", caption: "التربية الخاصة " } 
                 ],
-                gallery_thumb: "https://i.ibb.co/b5SPQTvd/5998918171538606307.jpg" // الصورة المخصصة لكلية العلوم التربوية
+                gallery_thumb: "https://i.ibb.co/b5SPQTvd/5998918171538606307.jpg" 
             },
             'img7': { // كلية الآداب و العلوم
                 name: 'كلية الآداب و العلوم',
                 courses: [
-                    {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/k2FFTmXM/5999043752087374126.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1ByM6AjCt0mdIEH1-PkDdLuth11EkoEbv?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/VYH8JcBC/5999043752087374125.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1CZbheG7_ijAFM2d0SKRf1zT4psVA1uqJ?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/1GFMxWtX/5999043752087374127.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/1lQZFT4rEpdS3oHX6WvzmSRkw-rZOBQcw?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/JRGQn72S/5998918171538606312.jpg"} 
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/k2FFTmXM/5999043752087374126.jpg", sub_items: universityRequirements},
+                    
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/VYH8JcBC/5999043752087374125.jpg", sub_items: [
+                         {name: `ملخص الادب الاردني (آداب)`, link: "https://drive.google.com/file/d/1Cc_id7q9sn0rWODW57gQLnQKW1WUb4Kb/view?usp=sharing"},
+                         {name: `ملخص التذوق الادبي العربي د محمد عمرو  (آداب)`, link: "https://drive.google.com/file/d/1CeHReqjgrVs6KVwuzTOKr6B0-lo7peGt/view?usp=sharing"},
+                         {name: `ملخص تاريخ الاردن الحديث (آداب)`, link: "https://drive.google.com/file/d/1CeU2mKw-7J59BgL0bayUV4dFT0-XgEDP/view?usp=sharing"},
+                         {name: `ملخص بلاغة ونقد (آداب)`, link: "#"},
+                         {name: `ملخص علوم سياسية ميد  (آداب)`, link: "https://drive.google.com/file/d/1IkK2iGejVWCS6WTTjDnSbaoxGfxjF6dS/view?usp=sharing"},
+                         {name: `ملخص الكيمياء العضوية (آداب)`, link: "#"},
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/1GFMxWtX/5999043752087374127.jpg", sub_items: [
+                         {name: `متطلب الكلية - فلسفة اسلامية (آداب)`, link: "https://drive.google.com/file/d/1Fxg155-ICK8hhBvUcKZqYVSHD9PGPKge/view?usp=sharing"},
+                         {name: `متطلب الكلية - لغة انجليزية (آداب)`, link: "#"},
+                         {name: `متطلب الكلية - تاريخ العرب (آداب)`, link: "#"},
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/58h5n8H/5998918171538606305.jpg", staff_items: [
+                       
+{ name:' د. هديل السنجاري', src: "https://i.supaimg.com/e2292ffd-60b5-4a39-9bf0-43257cbb7386.jpg"},
+{ name:' د. فاتن أبو عرابي', src: "https://i.supaimg.com/600e19d4-f6a2-4151-accc-8b14f2cd404f.jpg"},
+{ name:' د. خلود شقيرات', src: "https://i.supaimg.com/4780d14e-8100-4d84-a612-66cb3d9836ff.jpg"},
+{ name: 'د. عمر النصرة', src: "https://i.supaimg.com/7c3a4383-d19d-440f-9514-ab9512163ba6.jpg"},
+{ name:' د. حسين البدوي', src: "https://i.supaimg.com/fb64dd83-2f36-4ec9-94b5-dedb1cdccc88.jpg"},
+{ name: 'د. شيماء مساعدة', src: "https://i.supaimg.com/0d3e93e5-2ada-491b-8ce4-a4a2b74646d7.jpg"},
+{ name: 'د. محمد عبدالعال', src: "https://i.supaimg.com/38b70551-3b96-4f82-b3b4-e2cd48587e8a.jpg"},
+{ name:' د. محمد العملة', src: "https://i.supaimg.com/33351aeb-1897-4f52-9c96-5e011e730ab6.jpg"},
+{ name: 'د. حمزة أبو شريعة', src: "https://i.supaimg.com/53725940-7553-4465-9e00-335107f50ba9.jpg"},
+{ name: 'د. إشراق العموش', src: "https://i.supaimg.com/e8c10a58-71db-4d9c-99da-6c977fe2e1ed.jpg"},
+{ name: 'د. مبارك الطراونة', src: "https://i.supaimg.com/fad59f53-9a2a-4751-b39c-99203665696e.jpg"},
+{ name:' د. محمد شطناوي', src: "https://i.supaimg.com/840c314a-9561-4afc-996a-016fc0a30a4a.jpg"},
+{ name: 'د. صالح الشورة', src: "https://i.supaimg.com/5e310a08-c8f1-4a8f-a940-deedd8871325.jpg"},
+{ name: 'د. أنس الصرايرة', src: "https://i.supaimg.com/0e5a89cd-c9cf-48b4-bfa8-3c83b6d4e88b.jpg"},
+
+                    ]} 
                 ],
-                gallery_images: [
-                    { src: "https://i.ibb.co/NnTpHYxn/a.png", caption: " التاريخ " },
-                    { src: "https://i.ibb.co/1Ghm6Nwz/r.png", caption: "اللغة الانجليزية " },
-                    { src: "https://i.ibb.co/chzzx1Js/ss.png", caption: "اللغة العربية " },
-                    { src: "https://i.ibb.co/chzzx1Js/ss.png", caption: "الكيمياء " },
-                    { src: "https://i.ibb.co/0RLbdzHn/IMG-20251024-WA0137.jpg", caption: "الرياضيات " }
+                gallery_images: [ 
+                    { src: "https://i.ibb.co/9qF4w0Q/o.png", caption: "لغة عربية " },
+                    { src: "https://i.ibb.co/VMy3sT5/i.png", caption: "لغة انجليزية " }
                 ],
-                gallery_thumb: "https://i.ibb.co/N2VPJyR5/5998918171538606311.jpg" // الصورة المخصصة لكلية الآداب والعلوم
+                gallery_thumb: "https://i.ibb.co/D8N8189/5998918171538606303-3.jpg" 
             },
             'img8': { // كلية المذاهب الفقهية
                 name: 'كلية المذاهب الفقهية',
                 courses: [
-                    {link:"https://drive.google.com/drive/folders/1fl0g4rGXhfOWhDb_i0MpH7WRGa9R6RU2?usp=drive_link",name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/Z1gy9WCp/5999043752087374143.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1CJ7EFHLAzYGsOUaDmsEM700w-2SILtym?usp=drive_link",name: "ملخصات مواد التخصص", image:"https://i.ibb.co/PZ0yJBxP/5999043752087374145.jpg"},
-                     {link:"https://drive.google.com/drive/folders/1CJ7EFHLAzYGsOUaDmsEM700w-2SILtym?usp=drive_link" , name:"متطلبات الكلية", image:"https://i.ibb.co/8nHStrfk/5999043752087374144.jpg"} , 
-                     {link:"https://drive.google.com/drive/folders/18bS5ANyI_EU04D1Rl5KJ-wiY_jnblSOy?usp=drive_link",name:"الهيئة التدريسية للكلية  ", image:"https://i.ibb.co/dZMk9cn/5998918171538606306-1.jpg"} 
-                ] ,
-                gallery_images: [
+                    {type: 'tertiary', name: "ملخصات متطلبات الجامعة", image:"https://i.ibb.co/Q8Q83R7/5999043752087374129.jpg", sub_items: universityRequirements},
                     
-                 { src: "https://i.ibb.co/F4DBjxfT/b.png", caption: "الاصلاح و الوفاق الأسري الشرعي" },
-                    { src: "https://i.ibb.co/p6Yqpccn/h.png", caption: "القضاء و الافتاء " },
-                    { src: "https://i.ibb.co/hJHFN3Dh/i.png", caption: " دبلوم الفقه المالكي " },
-                    { src: "https://i.ibb.co/v0C5jtX/j.png", caption: "الفقه الحنفي " },
-                    { src: "https://i.ibb.co/9kxNQNvk/o.png", caption: "الفقه الشافعي " },
-                    { src: "https://i.ibb.co/LzBBBnXT/x.png", caption: "الفقه المالكي و أصوله " }
+                    // مواد التخصص (خاصة بالكلية)
+                    {type: 'tertiary', name: "ملخصات مواد التخصص", image:"https://i.ibb.co/S7qj945/5999043752087374130.jpg", sub_items: [
+                         {name: `ملخص وصايا و مواريث  (فقه حنفي)`, link: "https://drive.google.com/file/d/19j8uSIB4Qs9pRAP4B999ubBBS2Wu_Nf-/view?usp=sharing"},
+                         {name: `ملخص  ايات الاحكام (فقه حنفي)`, link: "https://drive.google.com/file/d/1Djda_yGE3vkEkw4ZCwx65Ad3ayQeczt_/view?usp=sharing"},
+                         {name: `ملخص مادة العقيدة 1  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Dk59evzFahkXtQNEgAUhlJNOjQVYwXsH/view?usp=sharing"},
+                         {name: `ملخص القضاء و السير 2  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Dw4Kj7UwIce_mgl4a08y9F_Afcgi1ZoE/view?usp=sharing"},
+                         {name: `ملخص تنمية العقيدة  (فقه حنفي)`, link: "https://drive.google.com/file/d/1E-L50_V67_gUq5RWpo846wrfBSVeY2fh/view?usp=sharing"},
+                         {name: `ملخص  تلاوة 1 (فقه حنفي)`, link: "https://drive.google.com/file/d/1E3nXLPsaJsM3JBZ2JJhMsfW4hInqsFAN/view?usp=sharing"},
+                         {name: `ملخص  الوجيز في القواعد الفقهية (فقه حنفي)`, link: "https://drive.google.com/file/d/1Dr7ttSrInZNJBa9HpFeaC672cDMqFNLB/view?usp=sharing"},
+                         {name: `ملخص علوم الحديث / اسئلة  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Dp0P4f2CJvywNjmumAVcgLDxLsMEdb1z/view?usp=sharing"},
+                         {name: `ملخص اصول التنفيذ 1  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Eq9lpS112eICSgb4v9mKrqIX8JawWK0H/view?usp=sharing"},
+                         {name: `ملخص اصول المحاكمات  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Eh2RM-EnyyZQHijnwJWe0lX26sN3Ug62/view?usp=sharing"},
+                         {name: `ملخص الترجيح المذهبي / اختيارات الشرنبلي و القدوري  (فقه حنفي)`, link: "https://drive.google.com/file/d/1EYzDYtgb-liOg75_wfPQoy99qJBlt0bv/view?usp=sharing"},
+                         {name: `ملخص الفضايا و احكامها  (فقه حنفي)`, link: "https://drive.google.com/file/d/1EVMaOb0DQnY13QIIdHmwaOzVptbevtTQ/view?usp=sharing"},
+                         {name: `ملخص  مصادر الالتزام 1 (فقه حنفي)`, link: "https://drive.google.com/file/d/1EDSEYEqX87iaVU8ozx2WBZyAyzwGF-L-/view?usp=sharing"},
+                         {name: `ملخص  نظام الحكم  (فقه حنفي)`, link: "https://drive.google.com/file/d/1E8Hdi-yLVdNJbyDLvdzg8gQ2x22-2ncP/view?usp=sharing"},
+                         {name: `تهذيب مادة دراسات اصولية2   (فقه حنفي)`, link: "https://drive.google.com/file/d/1E4_eHZ7wrkLpL5PZw-ooq-Spggi_ooRD/view?usp=sharing"},
+                         {name: `ملخص فقه الطلاق و الزواج 1  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Euv6lapmo7btbI218F_wnic6A4iuWY6d/view?usp=sharing"},
+                         {name: `ملخص فقه العبادات 1  (فقه حنفي)`, link: "https://drive.google.com/file/d/1Et3K01t8YW-o1L2cARv-MdYEaWRFvxkQ/view?usp=sharing"},
+                         {name: `ملخص  جنايات (فقه شافعي)`, link: "https://drive.google.com/file/d/19JiN_LJK7PzMGUwEQ4x0hif0yderQklC/view?usp=sharing"},
+                         {name: `ملخص  زواج و طلاق 1 (فقه شافعي)`, link: "https://drive.google.com/file/d/16T_RJnJfpvBqJ0wZ6Op2HVPBA916osiR/view?usp=sharing"},
+
+
+                    ]},
+                    
+                    // متطلبات الكلية (خاصة بالكلية)
+                    {type: 'tertiary', name:"متطلبات الكلية", image:"https://i.ibb.co/W210t73/5999043752087374133.jpg", sub_items: [
+                         {name: `متطلب الكلية - مدخل فقهي (مذاهب)`, link: "#"},
+                         {name: `متطلب الكلية - علم الحديث (مذاهب)`, link: "#"},
+                         {name: `متطلب الكلية - عقيدة (مذاهب)`, link: "#"},
+                    ]}, 
+                    
+                    // الهيئة التدريسية (خاصة بالكلية)
+                    {type: 'staff', name:"الهيئة التدريسية للكلية", image:"https://i.ibb.co/7C13G3s/5998918171538606302.jpg", staff_items: [
+                        {name: `د عثمان محمد البلعاوي`, src: "https://i.supaimg.com/b7852b93-238b-4f1b-a988-0ce6a3d7e72c.jpg"},
+                        {name: `د محمود علاء`, src: "https://i.supaimg.com/ec9e44fd-55fa-4e6f-8a4a-e7ef3f33a0a1.jpg"},
+                        {name: `د عبد الرازق سدر`, src: "https://i.supaimg.com/5986f68c-8573-41ca-a79b-249aa536e290.jpg"},
+
+                        {name: `د طارق معتصم الصباغ`, src: "https://i.supaimg.com/58f1b05d-8920-419a-82b5-e124207c3416.jpg"},
+                        {name: `د محمود عناد الفلاح`, src: "https://i.supaimg.com/de260618-f61e-40bb-80c6-71297ba60207.jpg"},
+                        {name: `  د ايمان كايد`, src: "https://i.supaimg.com/48e406f6-d7c4-43e0-8df6-8107581346f6.jpg"},
+                        {name: `د سليمان عواد السردية`, src: "https://i.supaimg.com/8bacb5b3-a084-41bb-8725-bd5b41255657.jpg"},
+                        {name: `د محمود محمد ابو شقير`, src: "https://i.supaimg.com/74b7a9f8-4bfe-4053-8f90-506a7da89dd3.jpg"},
+                        {name: `د عماد محمد الجراجرة`, src: "https://i.supaimg.com/bd5167d5-97c7-43ae-aa1f-b7d6e9feb102.jpg"},
+                        {name: `د محمد عبد المنان النجار`, src: "https://i.supaimg.com/d3785699-8018-440a-b8e4-7f7b8d6cbe7a.jpg"},
+                        {name: `د مروان محمد الدويري`, src: "https://i.supaimg.com/7dd4ac52-69cf-4a2c-8ee4-bf3692f2f022.jpg"},
+                        {name: `د محمد سلمان الرقب`, src: "https://i.supaimg.com/3904307e-eea3-4317-a501-e908db59a0f9.jpg"},
+                        {name: `د يوسف حازم ابو غزالة`, src: "https://i.supaimg.com/8cc9d71f-b8f0-49ef-b0d6-876d4dadb45b.jpg"},
+                        {name: `د عمر علي عرفات`, src: "https://i.supaimg.com/b3a49955-119e-43fa-b8fa-56d7feeb7a2f.jpg"},
+                        {name: `د محمد عبد عيد الرعود`, src: "https://i.supaimg.com/c556d966-82e9-424b-aff9-62553671421e.jpg"},
+                        {name: `د سليمان زهدي عبد الكريم`, src: " https://i.supaimg.com/ba59d371-a50f-4a6f-8814-5cecc27949fc.jpg "},
+                        {name: `د حذيفة عبد السلام الخصيلات`, src: " https://i.supaimg.com/604f5191-6ab2-4fb9-90ba-c8e5ade1dbc6.jpg "},
+                        {name: `د معاذ سعيد حوا`, src: " https://i.supaimg.com/b86040c1-2233-4b52-9b82-377f6c6451f0.jpg "},
+                        {name: `د شريف الشوابكة  `, src: " https://i.supaimg.com/b5410895-c092-4f84-a3ec-32d8d0836fab.jpg "},
+                        {name: ` د ياسين محمد عنانزة `, src: " https://i.supaimg.com/758c69d9-c699-42d2-899e-e8cd481ab0ca.jpg "},
+                        {name: ` د احمد عبد المنعم ريحان `, src: " https://i.supaimg.com/12b6e2c7-ab97-4aaa-b212-e0420382e1c8.jpg "},
+                        {name: `  د عبد الله رشاد حسين`, src: " https://i.supaimg.com/54548254-3a0d-4c7e-a965-57b5296d38a0.jpg "},
+                        {name: ` د طارق معتصم الصباغ `, src: " https://i.supaimg.com/f4096682-cf1c-4067-8dd8-9db6ad332839.jpg "},
+                        {name: ` د الاء ابراهيم المشوخي `, src: " https://i.supaimg.com/8708c58b-889b-4467-9d7b-5585d73e85ad.jpg "},
+                        {name: ` د غيث حلمي الملكاوي `, src: " https://i.supaimg.com/9a804e19-cd83-4445-b52e-51391d7fa606.jpg "},
+                        {name: ` د حنين رياض فريحات `, src: " https://i.supaimg.com/0d529940-248b-4747-8401-336b97f87669.jpg "},
+                        {name: ` د كوثر سليم العيسى  `, src: " https://i.supaimg.com/b7696bec-8914-4216-92f9-d92add9e3d5f.jpg "},
+                        {name: ` د يوسف جابر ابو شقرة  `, src: "https://i.supaimg.com/9fdaab2c-7551-4df7-90ea-6ed56c8f6dad.jpg  "},
+                        {name: ` د وليد خليل الحواجز  `, src: " https://i.supaimg.com/054b7930-e28f-4ac7-91db-5adfd90b964c.jpg "},
+                        {name: ` د مؤيد حمدان موسى  `, src: "https://i.supaimg.com/f0222b53-6bce-48b7-97fc-cac605815354.jpg  "},
+                        {name: ` د مؤيد حمدان موسى  `, src: " https://i.supaimg.com/e4de240d-d616-4ad1-b00b-0eede4816f95.jpg "},
+                        {name: `  د ميرفت عبد المغني سنقرط `, src: "https://i.supaimg.com/855b76c8-8bad-45fe-a185-7b9ac24ff184.jpg  "},
+                        {name: `  د موسى عبدالجليل عمرو `, src: " https://i.supaimg.com/9e881b5b-a8d8-4a5e-88e5-545b134714c6.jpg "},
+                        {name: `  د  براء عبد الملك السعدي `, src: " https://i.supaimg.com/51911176-9ed6-46a2-9872-ccbbcaf63d75.jpg "},
+                        {name: ` د اسراء رياض فايز  `, src: " https://i.supaimg.com/71d59426-e98a-4a1d-b98d-a9b35bfc05f9.jpg "},
+                        {name: ` د اريج امين الشديفات  `, src: " https://i.supaimg.com/62148b4c-0e2d-43af-b5c3-89ac7755f480.jpg "},
+                        {name: ` د صلاح محمد ابو الحاج  `, src: " https://i.supaimg.com/a4066702-445e-4f94-8309-0bd786a533b9.jpg "},
+                        {name: `  د رافت علي الصعيدي `, src: "https://i.supaimg.com/8e94fec9-c870-4a36-9b45-b322b06a2245.jpg  "},
+                        {name: `  د احمد سلامةالشروش `, src: " https://i.supaimg.com/2ca05c6f-2883-4a48-a2d5-dc5a05e991a5.jpg "},
+                        {name: ` د امجد فلاح الوليدات  `, src: " https://i.supaimg.com/4bde00d5-4a58-4b11-9b0b-6d35b7e1db8d.jpg "},
+                        {name: `   `, src: "  "},
+
+                    ]} 
                 ],
-                gallery_thumb: "https://i.ibb.co/bM9TfQ6H/5998918171538606303.jpg" // الصورة المخصصة لكلية المذاهب الفقهية
+                gallery_images: [ 
+                    { src: "https://i.ibb.co/b34X717/u.png", caption: "الفقه المالكي " },
+                    { src: "https://i.ibb.co/Jz0gP1g/v.png", caption: "الفقه الحنفي " },
+                    { src: "https://i.ibb.co/2d75f2T/b.png", caption: "الفقه الشافعي " }
+                ],
+                gallery_thumb: "https://i.ibb.co/Tmg0yG6/5998918171538606301-2.jpg"
             }
         };
-        
+
         // ==============================================
-        // 2. كود JavaScript للتحكم بالبوابات (الواجهات)
+        // 2. وظائف التحكم في الواجهات (Gates) - لم يتغير
         // ==============================================
 
-        // لإظهار واجهة وإخفاء الواجهات الأخرى
-        // تم تعديل الدالة لاستقبال مفتاح الكلية (dataKey)
+        const gates = document.querySelectorAll('.gate-view');
+
         function showGate(gateId, dataKey = null) {
-            // قائمة بجميع الواجهات
-            const gates = document.querySelectorAll('.gate-view');
+            gates.forEach(gate => { gate.style.display = 'none'; });
 
-            // إخفاء كل الواجهات أولاً
-            gates.forEach(gate => {
-                gate.style.display = 'none';
-            });
-
-            // إظهار الواجهة المطلوبة
             const selectedGate = document.getElementById(gateId);
-            if (selectedGate) {
-                selectedGate.style.display = 'block';
+            if (!selectedGate) return; 
 
-                // **المنطق الجديد لتعبئة الواجهة الثانوية بالمواد الصحيحة**
-                if (gateId === 'secondary-gate' && dataKey && links[dataKey]) {
-                    const data = links[dataKey];
-                    const secondaryGateContent = document.getElementById('secondary-gate-content');
+            selectedGate.style.display = 'block';
+
+            if (gateId === 'secondary-gate' && dataKey && links[dataKey]) {
+                const data = links[dataKey];
+                const secondaryGateContent = document.getElementById('secondary-gate-content');
+                document.getElementById('secondary-gate-title').innerText = `ملخصات ومواد ${data.name} `;
+                
+                let html = '';
+                data.courses.forEach((course, index) => { 
+                    const linkName = course.name; 
+                    const imageSrc = course.image && course.image !== '#' ? course.image : `https://via.placeholder.com/150/808080/FFFFFF?text=${linkName.substring(0, 10)}`; 
                     
-                    // تحديث عنوان الواجهة الثانوية ليعكس الكلية المختارة
-                    document.getElementById('secondary-gate-title').innerText = `ملخصات ومواد ${data.name} 📚`;
-
-                    let html = '';
+                    let clickAction = '';
                     
-                    // بناء بطاقات المواد بناءً على بيانات الكلية
-                    data.courses.forEach((course) => {
-                        const linkURL = course.link; 
-                        const linkName = course.name;
-                        
-                        // استخدام الصورة المخصصة، أو صورة Placeholder إذا لم تجد رابط
-                        const imageSrc = course.image && course.image !== '#' 
-                            ? course.image 
-                            : `https://via.placeholder.com/150/808080/FFFFFF?text=${linkName.substring(0, 10)}`;
+                    if (course.type === 'tertiary') {
+                        clickAction = `onclick="openTertiaryGate('${dataKey}', ${index})"`;
+                    } else if (course.type === 'staff') {
+                        clickAction = `onclick="openStaffGallery('${dataKey}', ${index})"`;
+                    } else {
+                         const linkURL = course.link || '#';
+                         clickAction = `onclick="window.open('${linkURL}', '_blank')"`; 
+                    }
 
+                    html += ` 
+                        <div class="gate-card" ${clickAction}> 
+                            <img src="${imageSrc}" alt="${linkName}"> 
+                            <button>${linkName}</button> 
+                        </div> 
+                    `;
+                });
+
+                const galleryCall = `showGate('gallery-view', '${dataKey}')`;
+                const thumbImageSrc = data.gallery_thumb || "https://via.placeholder.com/150/CCCCCC/000000?text=معرض+الصور";
+                html += ` 
+                    <div class="gate-card" onclick="${galleryCall}"> 
+                        <img src="${thumbImageSrc}" alt="معرض الصور"> 
+                        <button> الخطة الشجرية للتخصص</button> 
+                    </div> 
+                `;
+                secondaryGateContent.innerHTML = html;
+
+            } else if (gateId === 'gallery-view' && dataKey && links[dataKey]) {
+                const data = links[dataKey];
+                const galleryViewContent = selectedGate.querySelector('.gate-grid');
+                
+                const galleryTitle = selectedGate.querySelector('h2'); 
+                if (galleryTitle) { galleryTitle.innerText = `تخصصات ${data.name} `; }
+
+                let html = '';
+                if (data.gallery_images) { 
+                    data.gallery_images.forEach(image => {
                         html += `
-                            <div class="gate-card">
-                                <a href="${linkURL}" target="_blank">
-                                    <img src="${imageSrc}" alt="${linkName}">
-                                    <button>${linkName}</button>
-                                </a>
+                            <div class="gate-card" onclick="openModal('${image.src}', '${image.caption}')">
+                                <img src="${image.src}" alt="${image.caption}">
+                                <button>${image.caption}</button>
                             </div>
                         `;
                     });
-                    
-                    // **إضافة بطاقة معرض الصور الديناميكية (تمرير dataKey)**
-                    const galleryCall = `showGate('gallery-view', '${dataKey}')`; 
-                    
-                    // استخدام الصورة المصغرة المخصصة للمعرض أو صورة Placeholder
-                    const thumbImageSrc = data.gallery_thumb || "https://via.placeholder.com/150/CCCCCC/000000?text=معرض+الصور"; 
-                    
-                    html += `
-                        <div class="gate-card" onclick="${galleryCall}">
-                            <img src="${thumbImageSrc}" alt="معرض الصور">
-                            <button>  الخطة الشجرية للتخصص</button>
-                        </div>
-                    `;
-
-                    secondaryGateContent.innerHTML = html;
-                    
-                    // تحديث زر الرجوع الرئيسي للواجهة الثانوية
-                    const returnToMainButton = selectedGate.querySelector('button[onclick="showGate(\'main-gate\')"]');
-                    if(returnToMainButton) {
-                        returnToMainButton.setAttribute('onclick', "showGate('main-gate')");
-                    }
-
-                } else if (gateId === 'gallery-view' && dataKey && links[dataKey]) {
-                    // **المنطق الجديد لتعبئة الواجهة الثالثة بالصور المخصصة**
-                    const data = links[dataKey];
-                    // نستخدم أول gate-grid نجده داخل الواجهة الثالثة كحاوية للمحتوى
-                    const galleryViewContent = selectedGate.querySelector('.gate-grid'); 
-                    
-                    // 1. تحديث عنوان المعرض ليعكس الكلية
-                    const galleryTitle = selectedGate.querySelector('h2');
-                    if (galleryTitle) {
-                         galleryTitle.innerText = `تخصصات ${data.name} `;
-                    }
-                   
-                    let html = '';
-
-                    // 2. بناء بطاقات الصور الخمسة ديناميكياً
-                    if (data.gallery_images) {
-                        data.gallery_images.forEach((img) => {
-                            // نستخدم رابط الصورة نفسه للعرض المكبر (Modal)
-                            const imageSrcFull = img.src.replace('150', '600'); 
-                            
-                            html += `
-                                <div class="gate-card">
-                                    <img src="${img.src}" 
-                                         alt="${img.caption}" 
-                                         onclick="openModal('${imageSrcFull}', '${img.caption}')">
-                                </div>
-                            `;
-                        });
-                    }
-                    
-                    galleryViewContent.innerHTML = html;
-
-                    // 3. تحديث زر الرجوع ليعود إلى الواجهة الثانوية مع مفتاح الكلية الصحيح
-                    const returnButton = selectedGate.querySelector('button[onclick*="showGate(\'secondary-gate\')"]');
-                    if (returnButton) {
-                        // العودة إلى الواجهة الثانوية، ويجب تمرير مفتاح الكلية dataKey ليعيد تحميل المواد
-                        returnButton.setAttribute('onclick', `showGate('secondary-gate', '${dataKey}')`);
-                    }
                 }
+                galleryViewContent.innerHTML = html;
+                
+                document.getElementById('gallery-return-button').setAttribute('onclick', `showGate('secondary-gate', '${dataKey}')`);
+            } 
+        }
 
-                window.scrollTo(0, 0); // للعودة إلى أعلى الصفحة عند التبديل
+        // ==============================================
+        // 3. وظيفة فتح الواجهة الفرعية للملخصات (Tertiary Gate) - لم تتغير
+        // ==============================================
+        function openTertiaryGate(collegeKey, courseIndex) {
+            document.querySelectorAll('.gate-view').forEach(gate => { gate.style.display = 'none'; });
+            const tertiaryGate = document.getElementById('tertiary-gate');
+            tertiaryGate.style.display = 'block';
+
+            const data = links[collegeKey].courses[courseIndex];
+            
+            document.getElementById('tertiary-gate-title').innerText = `${data.name} لـ ${links[collegeKey].name} `;
+            
+            let uniqueClass = '';
+            if (data.name.includes("متطلبات الجامعة")) {
+                uniqueClass = 'uni-sum-btn';
+            } else if (data.name.includes("مواد التخصص")) {
+                uniqueClass = 'spec-sum-btn';
+            } else if (data.name.includes("متطلبات الكلية")) {
+                uniqueClass = 'coll-req-btn';
+            } else {
+                uniqueClass = 'default-sum-btn';
+            }
+            
+            const tertiaryGateContent = document.getElementById('tertiary-gate-content');
+            let html = '';
+            
+            // يضمن هذا الكود مرونة في عدد العناصر
+            data.sub_items.forEach((item) => {
+                html += `
+                    <a href="${item.link}" target="_blank" class="sub-link-button ${uniqueClass}">
+                         ${item.name}
+                    </a>
+                `;
+            });
+            
+            tertiaryGateContent.innerHTML = html;
+            
+            document.getElementById('tertiary-return-button').setAttribute('onclick', `showGate('secondary-gate', '${collegeKey}')`);
+        }
+
+        // ==============================================
+        // 4. وظيفة فتح معرض الهيئة التدريسية (Staff Gallery) - لم تتغير
+        // ==============================================
+        
+        function openStaffGallery(collegeKey, courseIndex) {
+            document.querySelectorAll('.gate-view').forEach(gate => { gate.style.display = 'none'; });
+            const staffGallery = document.getElementById('staff-gallery-view');
+            staffGallery.style.display = 'block';
+            
+            const data = links[collegeKey].courses[courseIndex];
+
+            document.getElementById('staff-gallery-view-title').innerText = `أعضاء الهيئة التدريسية لـ ${links[collegeKey].name} `;
+            
+            const staffGalleryContent = document.getElementById('staff-gallery-content');
+            let html = '';
+            
+            // يضمن هذا الكود مرونة في عدد الأعضاء
+            data.staff_items.forEach((item) => {
+                html += `
+                    <div class="staff-card">
+                        <img src="${item.src}" alt="${item.name}">
+                        <div class="staff-name">${item.name}</div>
+                    </div>
+                `;
+            });
+            
+            staffGalleryContent.innerHTML = html;
+            
+            document.getElementById('staff-return-button').setAttribute('onclick', `showGate('secondary-gate', '${collegeKey}')`);
+        }
+
+
+        // ==============================================
+        // 5. وظائف الـ Modal والتحكم بالـ Sidebar (لم تتغير)
+        // ==============================================
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+
+        function openModal(imageSrc, captionText) {
+            modal.style.display = "block";
+            modalImg.src = imageSrc; 
+            modalImg.style.display = 'block';
+            document.getElementById("caption").innerHTML = `<p>${captionText}</p>`;
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+        
+        modal.onclick = function(event) {
+            if (event.target === modal) { 
+                closeModal();
             }
         }
         
-        // ==============================================
-        // دالة الـ Modal (مهمة لعرض الصور الكبيرة)
-        // ==============================================
-        
-        const modal = document.getElementById("imageModal");
-        const modalImg = document.getElementById("modalImage");
-        
-        // دالة لفتح الـ Modal وعرض الصورة
-        function openModal(imageSrc, captionText) {
-          modal.style.display = "block";
-          
-          // في حال أرسلت روابط صور حقيقية لاحقاً
-          modalImg.src = imageSrc; // إظهار الصورة الكبيرة
-          modalImg.style.display = 'block'; // التأكد من إظهار الصورة في الـ Modal
-          
-          document.getElementById("caption").innerHTML = `<p>${captionText}</p>`;
-        }
-
-        // دالة لإغلاق الـ Modal
-        function closeModal() {
-          modal.style.display = "none";
-        }
-        
-        // إغلاق الـ Modal بالنقر خارج الصورة 
-        modal.onclick = function(event) {
-          // التأكد من أن النقر تم على خلفية الـ Modal وليس على محتوياته
-          if (event.target === modal) {
-            closeModal();
-          }
-        }
-        
-        // التأكد من إظهار الواجهة الرئيسية عند تحميل الصفحة
         window.onload = function() {
             showGate('main-gate');
         };
         
-        // التحكم في السحب لفتح/إغلاق القائمة الجانبية 
         let startX;
         const sidebar = document.getElementById("sidebar");
         
-        // دالة تبديل الشريط الجانبي (موجودة في HTML الزر)
         function toggleSidebar() {
             sidebar.classList.toggle("open");
         }
@@ -972,20 +1530,16 @@
             e.preventDefault(); 
         });
         
-        // وظائف نافذة "من نحن"
         function openAbout() {
             document.getElementById("aboutSection").style.display = "block";
             document.body.style.overflow = "hidden";
         }
 
         function closeAbout(event) {
-          // منع الإغلاق إذا كان النقر داخل المحتوى (content)
           if (event && event.target !== document.getElementById("aboutSection") && event.target.className !== 'close-btn-modal') return;
           document.getElementById("aboutSection").style.display = "none";
           document.body.style.overflow = "auto";
         }
-
     </script>
 </body>
-
 </html>
