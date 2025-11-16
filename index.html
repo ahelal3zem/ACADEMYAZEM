@@ -262,13 +262,19 @@
             background-color: #3a0000;
         }
         
-        /* أنماط خاصة للواجهة الثانية (المواد): تجعل الصور مربعة */
-        #secondary-gate .gate-card img {
-            border-radius: 8px; /* شكل مربع بزوايا ناعمة */
-            width: 70%; 
-            aspect-ratio: auto;
-            object-fit: contain;
-        }
+     /* أنماط خاصة للواجهة الثانية (المواد): تجعل الصور كاملة وموسّطة (الحل النهائي) */
+#secondary-gate .gate-card img {
+    /* **الأوامر الحتمية لمنع القص وإلغاء الشكل المربع القسري** */
+    aspect-ratio: auto !important; 
+    object-fit: contain !important;
+    
+    /* **زيادة قوة التحديد والتحكم في الحجم:** */
+    width: 95% !important; /* زيادة العرض لملء البطاقة بشكل أفضل */
+    max-width: 100% !important; /* ضمان عدم تجاوز عرض البطاقة */
+    height: auto !important; /* السماح بتغير الارتفاع حسب أبعاد الصورة الأصلية */
+    border-radius: 8px !important; /* فرض الشكل المربع بزوايا ناعمة */
+    margin: 10px auto !important; /* ضمان التوسيط */
+}
 
         /* أنماط خاصة للواجهة الثالثة (المعرض): تجعل الصور مربعة */
         #gallery-view .gate-card img {
@@ -1559,3 +1565,4 @@
     </script>
 </body>
 </html>
+
