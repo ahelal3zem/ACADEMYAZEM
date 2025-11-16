@@ -113,7 +113,7 @@
             cursor: pointer;
             font-size: 1.2em;
             font-weight: bold; 
-            width: 100%;
+            width: 90%;
             text-align: center;
             text-decoration: none; 
             display: block; 
@@ -230,18 +230,23 @@
             transform: translateY(-5px);
         }
 
-        /* تعديل الأنماط هنا لجعل الصورة أصغر وموسّطة */
-        .gate-card img {
-            width: 80%; /* تم تصغير العرض من 100% إلى 80% */
-            display: block; /* ضروري لتوسيط العنصر */
-            aspect-ratio: 1 / 1;
-            object-fit: cover; 
-            border-radius: 50%; /* شكل دائرة */
-            margin: 10px auto; /* توسيط الدائرة وإضافة مسافة */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: border 0.3s;
-        }
-        
+
+       /* تعديل الأنماط هنا لجعل الصورة أصغر وموسّطة */
+.gate-card img {
+    width: 80%; /* تم تصغير العرض من 100% إلى 80% */
+    display: block; /* ضروري لتوسيط العنصر */
+    /* تم حذف aspect-ratio: 1 / 1; و object-fit: cover; نهائياً من هنا */
+    border-radius: 50%; /* شكل دائرة */
+    margin: 10px auto; /* توسيط الدائرة وإضافة مسافة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s;
+}
+
+            /* فرض الشكل المربع والدائري على الواجهة الرئيسية فقط */
+#main-gate .gate-card img {
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+}
         .gate-card:hover img {
             border: 4px solid rgb(83, 16, 16); /* إطار عند التحويم */
         }
@@ -261,8 +266,7 @@
         .gate-card button:hover {
             background-color: #3a0000;
         }
-        
-     /* أنماط خاصة للواجهة الثانية (المواد): تجعل الصور كاملة وموسّطة (الحل النهائي) */
+    /* أنماط خاصة للواجهة الثانية (المواد): تجعل الصور كاملة وموسّطة (الحل النهائي) */
 #secondary-gate .gate-card img {
     /* **الأوامر الحتمية لمنع القص وإلغاء الشكل المربع القسري** */
     aspect-ratio: auto !important; 
@@ -276,12 +280,15 @@
     margin: 10px auto !important; /* ضمان التوسيط */
 }
 
-        /* أنماط خاصة للواجهة الثالثة (المعرض): تجعل الصور مربعة */
-        #gallery-view .gate-card img {
-            border-radius: 8px; /* شكل مربع بزوايا ناعمة */
-            width: 80%; 
-        }
-        
+
+/* أنماط خاصة للواجهة الثالثة (المعرض و الهيئة التدريسية): تجعل الصور كاملة */
+#gallery-view .gate-card img,
+#staff-gallery-view .gate-card img { /* تم إضافة نمط الهيئة التدريسية */
+    border-radius: 8px; /* شكل مربع بزوايا ناعمة */
+    width: 80%; 
+    aspect-ratio: auto;
+    object-fit: contain;
+}
         /* النمط الجديد لاسم الكلية/التخصص في الواجهة الرئيسية */
         .college-name-label {
             background-color: rgb(83, 16, 16);
@@ -633,8 +640,7 @@
         <li class="sub-item"><a href="ahlal3azem332@gmail.com">اسألني</a></li>
         <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfya1bThzDPsKIf8SS_qatImLl5Trlo5T3MMMLRwPwPAutHqw/viewform?usp=header">شاركنا ملخصاتك </a></li>
         <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf7Q9Kz4UaI4RjJ4hVx05EOFUpAQW9jPtQjoD2yRuxIuAsPIQ/viewform?usp=header">اقتراحاتك</a></li>
-        <li class="section-title"> تقييم الخدمة</li>
-        <li class="sub-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeX5jqUNrFJhJjpr_Pp9aatENqS0L1D1DO1FEFoXru41WLxbw/viewform?usp=header">تقييم الخدمة</a></li>
+        
    
     </ul>
 </div>
@@ -1565,4 +1571,3 @@
     </script>
 </body>
 </html>
-
