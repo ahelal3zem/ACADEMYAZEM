@@ -69,7 +69,7 @@
         /* أنماط البوابات (الواجهات) */
         .gate-view {
             padding: 20px;
-            background-color: #fff;
+            background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -437,7 +437,7 @@
         .sidebar {
             width: 300px;
             height: 100%;
-            background-color: #eee;
+            background-color: rgba(43, 5, 5, 0.9);
             position: fixed;
             top: 0;
             right: -300px;
@@ -470,23 +470,23 @@
 
         .sidebar ul li {
             padding: 15px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #d4ae01;
         }
 
         .sidebar ul li a {
             text-decoration: none;
-            color: black;
+            color: rgb(255, 255, 255);
             display: block;
             transition: background 0.3s;
         }
 
         .sidebar ul li a:hover {
-            background-color: #ccc;
+            background-color: #0608116c;
         }
 
         .section-title {
             background-color: #3e0303;
-            color: white;
+            color: rgb(255, 255, 255);
             padding: 10px;
             font-size: 18px;
             font-weight: bold;
@@ -495,7 +495,7 @@
         }
 
         .sub-item {
-            background-color: #ffffff;
+            background-color: rgb(83, 16, 16);
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 5px;
@@ -594,7 +594,7 @@
   max-width: 800px;
   text-align: right;
   direction: rtl;
-  color: #3a0000;
+  color: #ffffff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   animation: slideIn 0.4s;
 }
@@ -607,7 +607,7 @@
 
 .about-box {
   background-color: #8b00003d;
-  color: rgb(41, 1, 1);
+  color: rgb(212, 199, 199);
   padding: 15px;
   border-radius: 10px;
   margin: 15px 0;
@@ -616,19 +616,544 @@
 
 .about-box h3 {
   margin-top: 0;
-  color: #3a0101;
+  color: #ffffff;
 }
 
 .about-box ul {
   padding-right: 20px;
   line-height: 1.8;
 }
+/* --- Luxurious Red Ramadan Theme --- */
+:root {
+    --ramadan-primary: #8B0000;        /* Deep Crimson */
+    --ramadan-secondary: #5D0E0E;      /* Dark Garnet */
+    --ramadan-accent: #A52A2A;         /* Rich Mahogany */
+    --ramadan-gold: #D4AF37;           /* Metallic Gold */
+    --ramadan-gold-light: #F4E4A6;     /* Soft Gold Glow */
+    --ramadan-gold-glow: rgba(212, 175, 55, 0.3);
+    --ramadan-dark: #1A0101;           /* Almost Black */
+    --ramadan-light: #FFF5EE;          /* Seashell White */
+    --ramadan-shadow: rgba(139, 0, 0, 0.6);
+}
 
+/* 1. LUXURIOUS BACKGROUND: Velvet Night Sky */
+body {
+    background: 
+        radial-gradient(ellipse at top, var(--ramadan-primary) 0%, transparent 70%),
+        radial-gradient(ellipse at bottom, var(--ramadan-secondary) 0%, transparent 70%),
+        linear-gradient(180deg, var(--ramadan-dark) 0%, #2C0303 100%) !important;
+    background-attachment: fixed !important;
+    color: var(--ramadan-light) !important;
+    font-family: 'Segoe UI', 'Cairo', 'Tahoma', sans-serif !important;
+}
+
+/* فوانيس رمضان بالصور */
+.ramadan-lantern {
+    position: fixed;
+    top: 60px;
+    width: 60px; /* عرض الصورة */
+    height: auto; /* يحافظ على نسبة الأبعاد */
+    z-index: 1001;
+    filter: drop-shadow(0 0 15px var(--ramadan-gold));
+    animation: elegantSwing 4s infinite ease-in-out;
+    pointer-events: none; /* لا يتفاعل مع الماوس */
+}
+
+.left-lantern {
+    left: 30px;
+}
+
+.right-lantern {
+    right: 30px;
+}
+
+/* أو إذا أردت فوانيس متعددة */
+.lantern-1 {
+    top: 60px;
+    left: 20px;
+    width: 50px;
+    animation-delay: 0s;
+}
+
+.lantern-2 {
+    top: 60px;
+    right: 20px;
+    width: 50px;
+    animation-delay: 1s;
+}
+
+.lantern-3 {
+    top: 150px;
+    left: 10px;
+    width: 40px;
+    animation-delay: 2s;
+}
+
+.lantern-4 {
+    top: 150px;
+    right: 10px;
+    width: 40px;
+    animation-delay: 3s;
+}
+
+/* 3. LUXURY HEADERS with Gold Embroidery Effect */
+h1, h2, h3 {
+    color: var(--ramadan-light) !important;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--ramadan-primary) 20%, 
+        var(--ramadan-secondary) 50%, 
+        var(--ramadan-primary) 80%, 
+        transparent 100%) !important;
+    border: none !important;
+    border-bottom: 2px solid var(--ramadan-gold) !important;
+    padding: 15px 30px !important;
+    margin: 20px 0 !important;
+    position: relative !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-weight: 300 !important;
+}
+
+h2 {
+    border-left: 4px solid var(--ramadan-gold) !important;
+    border-right: 4px solid var(--ramadan-gold) !important;
+    border-radius: 0 !important;
+    box-shadow: 
+        0 5px 15px var(--ramadan-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(135deg, 
+        rgba(139, 0, 0, 0.9) 0%, 
+        rgba(93, 14, 14, 0.9) 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gold Crescent Before Headers */
+h2::before {
+    content: "🌙";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 5px var(--ramadan-gold));
+}
+
+/* 4. LUXURY CARDS with Velvet Texture */
+.gate-view, .about-content, .message-card, 
+.card, .container, .box {
+    background: linear-gradient(145deg, 
+         rgba(59, 21, 21, 0.9) 0%, 
+         rgba(49, 1, 1, 0.9) 100%) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-top: 2px solid var(--ramadan-gold) !important;
+    box-shadow: 
+        0 10px 30px rgba(26, 1, 1, 0.8),
+        0 0 0 1px rgba(212, 175, 55, 0.1),
+        inset 0 0 20px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(5px);
+    border-radius: 8px !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease !important;
+}
+
+/* Gold Corner Accents */
+.gate-view::before, .about-content::before, .message-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--ramadan-gold), 
+        transparent);
+}
+
+/* Hover Effect for Cards */
+.gate-view:hover, .about-content:hover, .message-card:hover,
+.card:hover, .container:hover, .box:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 
+        0 15px 40px rgba(139, 0, 0, 0.6),
+        0 0 0 1px rgba(212, 175, 55, 0.3),
+        inset 0 0 30px rgba(0, 0, 0, 0.2) !important;
+    border-color: var(--ramadan-gold) !important;
+}
+
+/* 5. LUXURY BUTTONS with Gold Trim */
+.gate-card button, .sub-link-button, 
+button, .btn, input[type="submit"] {
+    background: linear-gradient(145deg, 
+        var(--ramadan-primary) 0%, 
+        var(--ramadan-secondary) 100%) !important;
+    color: var(--ramadan-light) !important;
+    border: 1px solid var(--ramadan-gold) !important;
+    border-radius: 4px !important;
+    padding: 12px 28px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: 
+        0 4px 15px var(--ramadan-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Gold Glow Effect */
+.gate-card button::before, .sub-link-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(212, 175, 55, 0.2), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.gate-card button:hover::before, .sub-link-button:hover::before {
+    left: 100%;
+}
+
+.gate-card button:hover, .sub-link-button:hover,
+button:hover, .btn:hover, input[type="submit"]:hover {
+    background: linear-gradient(145deg, 
+        var(--ramadan-secondary) 0%, 
+        var(--ramadan-primary) 100%) !important;
+    color: var(--ramadan-gold-light) !important;
+    border-color: var(--ramadan-gold-light) !important;
+    box-shadow: 
+        0 6px 25px rgba(212, 175, 55, 0.4),
+        0 0 15px var(--ramadan-gold-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 6. ELEGANT STARS BACKGROUND */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--ramadan-gold-light), transparent),
+        radial-gradient(2px 2px at 40px 70px, var(--ramadan-gold-light), transparent),
+        radial-gradient(1px 1px at 90px 40px, var(--ramadan-gold-light), transparent),
+        radial-gradient(1px 1px at 130px 80px, var(--ramadan-gold-light), transparent),
+        radial-gradient(2px 2px at 160px 120px, var(--ramadan-gold-light), transparent),
+        radial-gradient(1px 1px at 200px 60px, var(--ramadan-gold-light), transparent),
+        radial-gradient(2px 2px at 250px 90px, var(--ramadan-gold-light), transparent),
+        radial-gradient(1px 1px at 300px 150px, var(--ramadan-gold-light), transparent),
+        radial-gradient(2px 2px at 350px 100px, var(--ramadan-gold-light), transparent),
+        radial-gradient(1px 1px at 400px 70px, var(--ramadan-gold-light), transparent),
+        radial-gradient(2px 2px at 450px 130px, var(--ramadan-gold-light), transparent);
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: -1;
+    animation: gentleTwinkle 8s infinite alternate;
+}
+
+@keyframes gentleTwinkle {
+    0%, 100% { opacity: 0.1; }
+    50% { opacity: 0.25; }
+}
+
+/* 7. LUXURY NAVBAR */
+.navbar {
+    background: linear-gradient(180deg, 
+        rgba(139, 0, 0, 0.95) 0%, 
+        rgba(93, 14, 14, 0.95) 100%) !important;
+    border-bottom: 2px solid var(--ramadan-gold) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    color: var(--ramadan-light) !important;
+    padding: 10px 20px !important;
+    margin: 0 5px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--ramadan-gold);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar a:hover {
+    background: rgba(212, 175, 55, 0.1) !important;
+    color: var(--ramadan-gold-light) !important;
+}
+
+.navbar a:hover::after {
+    width: 80%;
+}
+
+/* 8. ELEGANT SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ramadan-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--ramadan-primary), var(--ramadan-secondary));
+    border-radius: 5px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--ramadan-secondary), var(--ramadan-primary));
+}
+
+/* 9. LUXURY INPUT FIELDS */
+input, textarea, select {
+    background: rgba(26, 1, 1, 0.8) !important;
+    border: 1px solid rgba(139, 0, 0, 0.5) !important;
+    color: var(--ramadan-light) !important;
+    padding: 12px 15px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none !important;
+    border-color: var(--ramadan-gold) !important;
+    box-shadow: 0 0 0 2px var(--ramadan-gold-glow) !important;
+    background: rgba(93, 14, 14, 0.9) !important;
+}
+
+/* 10. FOOTER ELEGANCE */
+footer {
+    background: linear-gradient(180deg, 
+        transparent, 
+        rgba(139, 0, 0, 0.3) 100%) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.2) !important;
+    color: var(--ramadan-gold-light) !important;
+    text-align: center !important;
+    padding: 30px 20px !important;
+    margin-top: 50px !important;
+}
+
+/* 11. ADDITIONAL DECORATIVE ELEMENTS */
+/* Gold Divider */
+.gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--ramadan-gold), 
+        transparent);
+    margin: 30px 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Crescent Moon Decorations */
+.crescent-moon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: var(--ramadan-gold);
+    border-radius: 50%;
+    margin: 0 10px;
+    position: relative;
+    box-shadow: 0 0 15px var(--ramadan-gold-glow);
+}
+
+.crescent-moon::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: var(--ramadan-dark);
+    border-radius: 50%;
+    transform: translateX(5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body::before, body::after {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        top: 40px;
+    }
+    
+    h1, h2, h3 {
+        padding: 10px 15px !important;
+        font-size: 1.4em !important;
+    }
+    
+    .gate-card button, .sub-link-button {
+        padding: 10px 20px !important;
+        font-size: 0.9em !important;
+    }
+}
+
+/* تخصيص قسم "رسالتنا" فقط */
+.our-message-section {
+    background: linear-gradient(135deg, 
+        rgba(74, 10, 10, 0.95) 0%,     /* أحمر داكن مخملي */
+        rgba(42, 2, 2, 0.95) 100%) !important;
+    border: 2px solid #B8860B !important;         /* ذهبي عتيق */
+    border-left: 2px solid #DAA520 !important;    /* شريط ذهبي على اليسار */
+    box-shadow: 
+        0 20px 40px rgba(90, 14, 14, 0.6),
+        inset 0 0 40px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(218, 165, 32, 0.2) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير خلفية خاصة */
+.our-message-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at center,
+        rgba(218, 165, 32, 0.05) 0%,
+        transparent 70%
+    );
+    z-index: 0;
+}
+
+/* العنوان داخل قسم "رسالتنا" */
+.our-message-section h3 {
+    color: #F5E6C8 !important;                   /* كريمي ذهبي */
+    background: linear-gradient(90deg, 
+        rgba(139, 0, 0, 0.7) 0%,
+        rgba(36, 0, 0, 0.7) 50%,
+        rgba(139, 0, 0, 0.7) 100%) !important;
+    border: none !important;
+    border-bottom: 3px solid #DAA520 !important;
+    padding: 20px 30px !important;
+    margin: -20px -20px 25px -20px !important;
+    width: calc(100% + 40px) !important;
+    text-align: right !important;
+    font-size: 1.8em !important;
+    letter-spacing: 1px !important;
+    position: relative;
+    z-index: 1;
+}
+
+
+@keyframes gentleGlow {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.1); }
+}
+
+/* نص الرسالة */
+.our-message-section p {
+    color: #E8DFD0 !important;                   /* كريمي فاتح */
+    font-size: 1em !important;
+    line-height: 1.8 !important;
+    padding: 15px !important;
+    position: relative;
+    z-index: 1;
+    text-align: center !important;
+    font-style: italic !important;
+    background: rgba(26, 1, 1, 0.4) !important;
+    border-radius: 8px;
+    margin: 15px 0 !important;
+}
+
+/* تأثير ظل للنص */
+.our-message-section p::first-line {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    color: #F5E6C8 !important;
+}
+
+/* تأثير عند المرور */
+.our-message-section:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 
+        0 30px 50px rgba(139, 0, 0, 0.7),
+        inset 0 0 50px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(218, 165, 32, 0.4) !important;
+    border-color: #FFD700 !important;
+    border-left-width: 8px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+
+.our-message-section a:hover {
+    color: #FFD700 !important;
+    border-bottom: 2px solid #FFD700 !important;
+}
+
+/* تفاصيل زخرفية */
+.our-message-section {
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(218, 165, 32, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(139, 0, 0, 0.03) 0%, transparent 50%);
+}
+
+
+/* قسم "تواصل معنا" داخل الفوتر */
+#ramadan-footer .contact-section,
+.ramadan-footer .contact-section {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+    padding: 30px !important;
+    background: rgb(74, 10, 10) !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(212, 175, 55, 0.2) !important;
+    box-shadow: 
+        inset 0 0 30px rgba(0, 0, 0, 0.3),
+        0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+/* حقوق النشر */
+#ramadan-footer .copyright,
+.ramadan-footer .copyright {
+    text-align: center !important;
+    color: #ffffff !important;
+    font-size: 0.95em !important;
+    padding: 25px !important;
+    margin-top: 30px !important;
+    border-top: 1px solid rgba(24, 1, 1, 0.1) !important;
+    letter-spacing: 1px !important;
+    font-family: 'Cairo', sans-serif !important;
+}
 
     </style>
 </head>
 <body>
 
+    <!-- فوانيس رمضان -->
+<img src="https://i.ibb.co/Kjst0pfY/2-removebg-preview.png" class="ramadan-lantern left-lantern" alt=" ">
+<img src="https://i.ibb.co/Pz6WQStc/3-removebg-preview.png" class="ramadan-lantern right-lantern" alt=" ">
+    
     <button class="menu-btn" onclick="toggleSidebar()">☰ </button>
 
 <div class="sidebar" id="sidebar">
@@ -790,9 +1315,8 @@
       <div id="caption"></div>
  
     </div>
-    
-<section class="message-card" data-aos="fade-up">
-    <h3>رسالتنا </h3>
+
+    <section class="message-card our-message-section" data-aos="fade-up">    <h3>رسالتنا </h3>
     <p>نهدف في "أهل العزم" إلى نشر العلم وتيسير الوصول للمعلومة بطريقة راقية ومميزة. إن احتجت أي مساعدة تواصل معنا .</p>
 </section>
 
@@ -831,7 +1355,8 @@
   </div>
 </div>
 
-<footer>
+<footer id="ramadan-footer">
+
         <div class="container">
             <div class="contact-section">
                 <h3 class="contact-title">تواصل معنا</h3>
